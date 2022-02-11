@@ -21,10 +21,10 @@ OnlyButtons.craft = {
   },
 };
 
-export const Custom1 = (props: any) => {
+export const Custom1 = (props) => {
   return (
     <Container {...props}>
-      <h2 className="text-lg px-10 py-5 text-white">
+      <h2 className="text-lg px-10 py-5 text-red">
         I'm a component that only accepts
         <br /> buttons.
       </h2>

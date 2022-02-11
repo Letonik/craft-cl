@@ -12,7 +12,7 @@ import {
   getElementDimensions,
 } from '../../utils/numToMeasurement';
 
-const Indicators = styled.div<{ bound?: 'row' | 'column' }>`
+const Indicators = styled.div`
   position: absolute;
   top: 0;
   left: 0;
@@ -81,7 +81,7 @@ const Indicators = styled.div<{ bound?: 'row' | 'column' }>`
   }
 `;
 
-export const Resizer = ({ propKey, children, ...props }: any) => {
+export const Resizer = ({ propKey, children, ...props }) => {
   const {
     id,
     actions: { setProp },
@@ -110,9 +110,9 @@ export const Resizer = ({ propKey, children, ...props }: any) => {
     };
   });
 
-  const resizable = useRef<Resizable>(null);
-  const isResizing = useRef<Boolean>(false);
-  const editingDimensions = useRef<any>(null);
+  const resizable = useRef(null);
+  const isResizing = useRef(false);
+  const editingDimensions = useRef(null);
   const nodeDimensions = useRef(null);
   nodeDimensions.current = { width: nodeWidth, height: nodeHeight };
 
@@ -190,7 +190,7 @@ export const Resizer = ({ propKey, children, ...props }: any) => {
         'topRight',
         'bottomLeft',
         'bottomRight',
-      ].reduce((acc: any, key) => {
+      ].reduce((acc, key) => {
         acc[key] = active && inNodeContext;
         return acc;
       }, {})}
@@ -221,7 +221,7 @@ export const Resizer = ({ propKey, children, ...props }: any) => {
       }}
       onResize={(_, __, ___, d) => {
         const dom = resizable.current.resizable;
-        let { width, height }: any = getUpdatedDimensions(d.width, d.height);
+        let { width, height } = getUpdatedDimensions(d.width, d.height);
         if (isPercentage(nodeWidth))
           width =
             pxToPercent(width, getElementDimensions(dom.parentElement).width) +
@@ -244,7 +244,7 @@ export const Resizer = ({ propKey, children, ...props }: any) => {
           height = editingDimensions.current.height + d.height + 'px';
         }
 
-        setProp((prop: any) => {
+        setProp((prop) => {
           prop[propKey.width] = width;
           prop[propKey.height] = height;
         }, 500);

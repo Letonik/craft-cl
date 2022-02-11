@@ -37,7 +37,7 @@ Custom3BtnDrop.craft = {
     },
   },
 };
-export const Custom3 = (props: any) => {
+export const Custom3 = (props) => {
   return (
     <Container {...props} className="overflow-hidden">
       <div className="w-full mb-4">

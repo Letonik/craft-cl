@@ -15,7 +15,7 @@ const HeaderDiv = styled.div`
   z-index: 99999;
   position: relative;
   padding: 0px 10px;
-  background: #d4d4d4;
+  background: #2c2d31;
   display: flex;
 `;
 
@@ -35,13 +35,13 @@ const Btn = styled.a`
   }
 `;
 
-const Item = styled.a<{ disabled?: boolean }>`
+const Item = styled.a`
   margin-right: 10px;
   cursor: pointer;
   svg {
     width: 20px;
     height: 20px;
-    fill: #707070;
+    fill: #13c2c2;
   }
   ${(props) =>
     props.disabled &&
@@ -80,8 +80,8 @@ export const Header = () => {
             className={cx([
               'transition cursor-pointer',
               {
-                'bg-green-400': enabled,
-                'bg-primary': !enabled,
+                'bg-info': enabled,
+                'bg-peach': !enabled,
               },
             ])}
             onClick={() => {
@@ -89,7 +89,7 @@ export const Header = () => {
             }}
           >
             {enabled ? <Checkmark /> : <Customize />}
-            {enabled ? 'Finish Editing' : 'Edit'}
+            {enabled ? 'Посмотреть' : 'Редактировать'}
           </Btn>
         </div>
       </div>

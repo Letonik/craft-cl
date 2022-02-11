@@ -38,13 +38,13 @@ const useSummaryStyles = makeStyles((_) => ({
   },
 }));
 
-export const ToolbarSection = ({ title, props, summary, children }: any) => {
+export const ToolbarSection = ({ title, props, summary, children }) => {
   const panelClasses = usePanelStyles({});
   const summaryClasses = useSummaryStyles({});
   const { nodeProps } = useNode((node) => ({
     nodeProps:
       props &&
-      props.reduce((res: any, key: any) => {
+      props.reduce((res, key) => {
         res[key] = node.data.props[key] || null;
         return res;
       }, {}),
@@ -63,7 +63,7 @@ export const ToolbarSection = ({ title, props, summary, children }: any) => {
               <Grid item xs={8}>
                 <h5 className="text-light-gray-2 text-sm text-right text-dark-blue">
                   {summary(
-                    props.reduce((acc: any, key: any) => {
+                    props.reduce((acc, key) => {
                       acc[key] = nodeProps[key];
                       return acc;
                     }, {})

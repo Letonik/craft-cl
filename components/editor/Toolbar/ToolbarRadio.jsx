@@ -51,7 +51,7 @@ const useLabelStyles = makeStyles({
   },
 });
 
-export const ToolbarRadio = ({ value, label }: any) => {
+export const ToolbarRadio = ({ value, label }) => {
   const classes = useLabelStyles({});
   return (
     <FormControlLabel

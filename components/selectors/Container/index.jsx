@@ -4,26 +4,6 @@ import { ContainerSettings } from './ContainerSettings';
 
 import { Resizer } from '../Resizer';
 
-export type ContainerProps = {
-  background: Record<'r' | 'g' | 'b' | 'a', number>;
-  color: Record<'r' | 'g' | 'b' | 'a', number>;
-  flexDirection: string;
-  alignItems: string;
-  justifyContent: string;
-  fillSpace: string;
-  width: string;
-  height: string;
-  padding: string[];
-  margin: string[];
-  marginTop: number;
-  marginLeft: number;
-  marginBottom: number;
-  marginRight: number;
-  shadow: number;
-  children: React.ReactNode;
-  radius: number;
-};
-
 const defaultProps = {
   flexDirection: 'column',
   alignItems: 'flex-start',
@@ -39,7 +19,7 @@ const defaultProps = {
   height: 'auto',
 };
 
-export const Container = (props: Partial<ContainerProps>) => {
+export const Container = (props) => {
   props = {
     ...defaultProps,
     ...props,

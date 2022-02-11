@@ -7,16 +7,7 @@ import { ButtonSettings } from './ButtonSettings';
 
 import { Text } from '../Text/index';
 
-type ButtonProps = {
-  background?: Record<'r' | 'g' | 'b' | 'a', number>;
-  color?: Record<'r' | 'g' | 'b' | 'a', number>;
-  buttonStyle?: string;
-  margin?: any[];
-  text?: string;
-  textComponent?: any;
-};
-
-const StyledButton = styled.button<ButtonProps>`
+const StyledButton = styled.button`
   background: ${(props) =>
     props.buttonStyle === 'full'
       ? `rgba(${Object.values(props.background)})`
@@ -30,7 +21,7 @@ const StyledButton = styled.button<ButtonProps>`
     `${margin[0]}px ${margin[1]}px ${margin[2]}px ${margin[3]}px`};
 `;
 
-export const Button: UserComponent<ButtonProps> = (props: any) => {
+export const Button = (props) => {
   const {
     connectors: { connect },
   } = useNode((node) => ({

@@ -61,16 +61,6 @@ const SliderStyled = withStyles({
   },
 })(Slider);
 
-export type ToolbarItemProps = {
-  prefix?: string;
-  label?: string;
-  full?: boolean;
-  propKey?: string;
-  index?: number;
-  children?: React.ReactNode;
-  type: string;
-  onChange?: (value: any) => any;
-};
 export const ToolbarItem = ({
   full = false,
   propKey,
@@ -78,7 +68,7 @@ export const ToolbarItem = ({
   onChange,
   index,
   ...props
-}: ToolbarItemProps) => {
+}) => {
   const {
     actions: { setProp },
     propValue,
@@ -96,7 +86,7 @@ export const ToolbarItem = ({
             type={type}
             value={value}
             onChange={(value) => {
-              setProp((props: any) => {
+              setProp((props) => {
                 if (Array.isArray(propValue)) {
                   props[propKey][index] = onChange ? onChange(value) : value;
                 } else {
@@ -113,8 +103,8 @@ export const ToolbarItem = ({
             <SliderStyled
               value={parseInt(value) || 0}
               onChange={
-                ((_, value: number) => {
-                  setProp((props: any) => {
+                ((_, value) => {
+                  setProp((props) => {
                     if (Array.isArray(propValue)) {
                       props[propKey][index] = onChange
                         ? onChange(value)
@@ -123,7 +113,7 @@ export const ToolbarItem = ({
                       props[propKey] = onChange ? onChange(value) : value;
                     }
                   }, 1000);
-                }) as any
+                })
               }
             />
           </>
@@ -136,7 +126,7 @@ export const ToolbarItem = ({
               value={value || 0}
               onChange={(e) => {
                 const value = e.target.value;
-                setProp((props: any) => {
+                setProp((props) => {
                   props[propKey] = onChange ? onChange(value) : value;
                 });
               }}
@@ -149,7 +139,7 @@ export const ToolbarItem = ({
             value={value || ''}
             onChange={(value) =>
               setProp(
-                (props: any) =>
+                (props) =>
                   (props[propKey] = onChange ? onChange(value) : value)
               )
             }

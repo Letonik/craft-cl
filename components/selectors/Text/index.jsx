@@ -4,16 +4,6 @@ import ContentEditable from 'react-contenteditable';
 
 import { TextSettings } from './TextSettings';
 
-export type TextProps = {
-  fontSize: string;
-  textAlign: string;
-  fontWeight: string;
-  color: Record<'r' | 'g' | 'b' | 'a', string>;
-  shadow: number;
-  text: string;
-  margin: [string, string, string, string];
-};
-
 export const Text = ({
   fontSize,
   textAlign,
@@ -22,7 +12,7 @@ export const Text = ({
   shadow,
   text,
   margin,
-}: Partial<TextProps>) => {
+}) => {
   const {
     connectors: { connect },
     setProp,

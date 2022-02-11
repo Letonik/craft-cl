@@ -8,17 +8,19 @@ import { SidebarItem } from './SidebarItem';
 import CustomizeIcon from '../../../../public/icons/customize.svg';
 import LayerIcon from '../../../../public/icons/layers.svg';
 import { Toolbar } from '../../Toolbar';
+import { MyComponents } from "../../MyComponents";
 
-export const SidebarDiv = styled.div<{ enabled: boolean }>`
+export const SidebarDiv = styled.div`
   width: 280px;
   opacity: ${(props) => (props.enabled ? 1 : 0)};
-  background: #fff;
+  background: #2c2d31;
   margin-right: ${(props) => (props.enabled ? 0 : -280)}px;
 `;
 
 export const Sidebar = () => {
   const [layersVisible, setLayerVisible] = useState(true);
   const [toolbarVisible, setToolbarVisible] = useState(true);
+  const [componentsVisible, setComponentsVisible] = useState(true);
   const { enabled } = useEditor((state) => ({
     enabled: state.options.enabled,
   }));
@@ -26,6 +28,15 @@ export const Sidebar = () => {
   return (
     <SidebarDiv enabled={enabled} className="sidebar transition bg-white w-2">
       <div className="flex flex-col h-full">
+        <SidebarItem
+          icon={CustomizeIcon}
+          title="Компоненты"
+          height={!layersVisible ? 'full' : '55%'}
+          visible={componentsVisible}
+          onChange={(val) => setComponentsVisible(val)}
+        >
+          <MyComponents />
+        </SidebarItem>
         <SidebarItem
           icon={CustomizeIcon}
           title="Customize"

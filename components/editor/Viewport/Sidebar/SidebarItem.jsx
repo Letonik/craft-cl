@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import Arrow from '../../../../public/icons/arrow.svg';
 
-const SidebarItemDiv = styled.div<{ visible?: boolean; height?: string }>`
+const SidebarItemDiv = styled.div`
   height: ${(props) =>
     props.visible && props.height && props.height !== 'full'
       ? `${props.height}`
@@ -13,7 +13,7 @@ const SidebarItemDiv = styled.div<{ visible?: boolean; height?: string }>`
   color: #545454;
 `;
 
-const Chevron = styled.a<{ visible: boolean }>`
+const Chevron = styled.a`
   transform: rotate(${(props) => (props.visible ? 180 : 0)}deg);
   svg {
     width: 8px;
@@ -21,23 +21,15 @@ const Chevron = styled.a<{ visible: boolean }>`
   }
 `;
 
-export type SidebarItemProps = {
-  title: string;
-  height?: string;
-  icon: string;
-  visible?: boolean;
-  onChange?: (bool: boolean) => void;
-};
-
 const HeaderDiv = styled.div`
-  color: #615c5c;
+  color: #fff;
   height: 45px;
   svg {
-    fill: #707070;
+    fill: #fff;
   }
 `;
 
-export const SidebarItem: React.FC<SidebarItemProps> = ({
+export const SidebarItem = ({
   visible,
   icon,
   title,
@@ -51,7 +43,7 @@ export const SidebarItem: React.FC<SidebarItemProps> = ({
         onClick={() => {
           if (onChange) onChange(!visible);
         }}
-        className={`cursor-pointer bg-white border-b last:border-b-0 flex items-center px-2 ${
+        className={`cursor-pointer bg-black-dark  last:border-b-0 flex items-center px-2 ${
           visible ? 'shadow-sm' : ''
         }`}
       >
@@ -64,7 +56,7 @@ export const SidebarItem: React.FC<SidebarItemProps> = ({
         </Chevron>
       </HeaderDiv>
       {visible ? (
-        <div className="w-full flex-1 overflow-auto">{children}</div>
+        <div className="w-full flex-1 overflow-auto bg-black-light">{children}</div>
       ) : null}
     </SidebarItemDiv>
   );

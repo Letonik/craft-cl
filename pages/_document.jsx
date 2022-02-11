@@ -25,7 +25,7 @@ export default class MyDocument extends Document {
       <Html>
         <Head>
           {/* Step 5: Output the styles in the head  */}
-          {(this.props as any).styleTags}
+          {this.props.styleTags}
         </Head>
         <body>
           <Main />

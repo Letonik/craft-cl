@@ -24,7 +24,7 @@ Custom2VideoDrop.craft = {
     },
   },
 };
-export const Custom2 = (props: any) => {
+export const Custom2 = (props) => {
   return (
     <Container {...props} className="overflow-hidden">
       <div className="w-24">

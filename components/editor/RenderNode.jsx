@@ -57,7 +57,7 @@ export const RenderNode = ({ render }) => {
     props: node.data.props,
   }));
 
-  const currentRef = useRef<HTMLDivElement>();
+  const currentRef = useRef();
 
   useEffect(() => {
     if (dom) {
@@ -66,7 +66,7 @@ export const RenderNode = ({ render }) => {
     }
   }, [dom, isActive, isHover]);
 
-  const getPos = useCallback((dom: HTMLElement) => {
+  const getPos = useCallback((dom) => {
     const { top, left, bottom } = dom
       ? dom.getBoundingClientRect()
       : { top: 0, left: 0, bottom: 0 };
@@ -103,7 +103,7 @@ export const RenderNode = ({ render }) => {
         ? ReactDOM.createPortal(
             <IndicatorDiv
               ref={currentRef}
-              className="px-2 py-2 text-white bg-primary fixed flex items-center"
+              className="px-2 py-2 text-white bg-info fixed flex items-center"
               style={{
                 left: getPos(dom).left,
                 top: getPos(dom).top,
@@ -129,7 +129,7 @@ export const RenderNode = ({ render }) => {
               {deletable ? (
                 <Btn
                   className="cursor-pointer"
-                  onMouseDown={(e: React.MouseEvent) => {
+                  onMouseDown={(e) => {
                     e.stopPropagation();
                     actions.delete(id);
                   }}

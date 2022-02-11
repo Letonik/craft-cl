@@ -44,13 +44,7 @@ const useLabelStyles = makeStyles({
   }, // a style rule
 });
 
-export type ToolbarTextInputProps = {
-  prefix?: string;
-  label?: string;
-  type: string;
-  onChange?: (value: any) => void;
-  value?: any;
-};
+
 export const ToolbarTextInput = ({
   onChange,
   value,
@@ -58,7 +52,7 @@ export const ToolbarTextInput = ({
   label,
   type,
   ...props
-}: ToolbarTextInputProps) => {
+}) => {
   const [internalValue, setInternalValue] = useState(value);
   const [active, setActive] = useState(false);
   const classes = useStyles({});
@@ -96,7 +90,7 @@ export const ToolbarTextInput = ({
           ></div>
           <ChromePicker
             color={value}
-            onChange={(color: any) => {
+            onChange={(color) => {
               onChange(color.rgb);
             }}
           />
@@ -108,7 +102,7 @@ export const ToolbarTextInput = ({
         value={internalValue || ''}
         onKeyDown={(e) => {
           if (e.key === 'Enter') {
-            onChange((e.target as any).value);
+            onChange(e.target.value);
           }
         }}
         onChange={(e) => {

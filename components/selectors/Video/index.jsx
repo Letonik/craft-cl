@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 import { VideoSettings } from './VideoSettings';
 
-const YoutubeDiv = styled.div<any>`
+const YoutubeDiv = styled.div`
   width: 100%;
   height: 100%;
   > div {
@@ -18,7 +18,7 @@ const YoutubeDiv = styled.div<any>`
   }
 `;
 
-export const Video = (props: any) => {
+export const Video = (props) => {
   const { enabled } = useEditor((state) => ({
     enabled: state.options.enabled,
   }));
@@ -46,7 +46,7 @@ export const Video = (props: any) => {
 Video.craft = {
   displayName: 'Video',
   props: {
-    videoId: 'IwzUs1IMdyQ',
+    videoId: 'uv_1AKKKJnk',
   },
   related: {
     toolbar: VideoSettings,
