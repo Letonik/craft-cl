@@ -9,6 +9,9 @@ export const tempsAPI = {
   createTemp(name, code) {
     return axios.post(`/api/create_temp`, {name, code})
   },
+  setActive(id, code) {
+    return axios.post(`/api/change_active`, {id, code})
+  },
 /*  getLocation() {
     return $instance.get(`api/show_location`)
   },

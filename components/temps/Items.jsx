@@ -3,20 +3,11 @@ import styled from "styled-components";
 import Fab from '@material-ui/core/Fab';
 import CheckIcon from '@material-ui/icons/Check';
 import DeleteIcon from '@material-ui/icons/Delete';
-import { createMuiTheme } from '@material-ui/core';
-import {ThemeProvider} from "@material-ui/styles";
+import EditIcon from '@material-ui/icons/Edit';
+import {useRouter} from "next/router";
+import ModalSetActive from "./ModalSetActive";
 
-const theme = createMuiTheme({
-  palette: {
-    error: {
-      main: '#f44336',
-    }
-  },
-});
-
-const Items = ({templates}) => {
-  console.log(templates)
-  const Templates = styled.div`
+const Templates = styled.div`
     margin: 90px auto;
     width: 100%;
     max-height: 700px;
@@ -31,37 +22,63 @@ const Items = ({templates}) => {
       box-shadow: 0px 0px 7px 1px rgba(29, 29, 29, 0.8);
       margin: 15px 20px;
       padding: 0 10px;
+      color: gray;
+      .right {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 300px;
+      }
     }
   
 `;
 
-
-  return (
-    <ThemeProvider theme={theme}>
-    <Templates>
-      {templates.map(item =>
-        <div className='item'>
-          <div>
-            {item.active ?
-              <Fab size="small" color="secondary" >
-                <CheckIcon />
-              </Fab>
-              :
-              <Fab size="small" color="gray">
-                <CheckIcon />
-              </Fab>
-            }
-          </div>
-          <div>
-            <Fab size="small" color='gray'>
-              <DeleteIcon />
-            </Fab>
-          </div>
-        </div>
-      )}
-    </Templates>
-    </ThemeProvider>
-  );
+const Items = ({templates}) => {
+    const [open, setOpen] = React.useState(false);
+    const [id, setId] = React.useState('');
+    const handleClose = () => setOpen(false);
+    const handleOpen = (id) => {
+        setId(id)
+        setOpen(true)
+    }
+    const router = useRouter();
+    return (
+        <>
+            <ModalSetActive open={open} handleClose={handleClose} id={id}/>
+            <Templates>
+                {templates.map(item =>
+                    <div className='item' key={item._id}>
+                        <div>
+                            <Fab
+                                size="small"
+                                color={item.active ? "secondary" : "gray"}
+                                onClick={() => handleOpen(item._id)}
+                            >
+                                <CheckIcon/>
+                            </Fab>
+                        </div>
+                        <div>{item.name}</div>
+                        <div className='right'>
+                            <div>
+                                {new Date(item.createdOn).toLocaleString()}</div>
+                            <div>
+                                <Fab
+                                    size="small" color='primary'
+                                    style={{marginRight: '15px'}}
+                                    onClick={() => router.push({pathname: '/editor/' + item._id})}
+                                >
+                                    <EditIcon/>
+                                </Fab>
+                                <Fab size="small" color='gray'>
+                                    <DeleteIcon/>
+                                </Fab>
+                            </div>
+                        </div>
+                    </div>
+                )}
+            </Templates>
+        </>
+    );
 };
 
 export default Items;

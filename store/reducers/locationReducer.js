@@ -31,5 +31,11 @@ export const createTemp = (name, code) => {
     dispatch(setLocation(locations.data));
   }
 }
+export const setActive = (id, code) => {
+  return async (dispatch) => {
+    const locations = await tempsAPI.setActive(id, code)
+    dispatch(setLocation(locations.data));
+  }
+}
 
 export default locationReducer;

@@ -7,7 +7,7 @@ const Container = styled.div`
     margin: 15vh auto;
     width: 500px;
     .item {
-      margin: 20px auto;
+      margin: 15px auto;
       width: 450px;
       display: flex;
       justify-content: start;
@@ -19,7 +19,7 @@ const Container = styled.div`
       font-weight: bold;
       box-shadow: 0px 0px 15px 2px rgba(29, 29, 29, 0.8);
       &:hover {
-        height: 64px;
+   /*     height: 64px;*/
          width: 475px;
          border-radius: 32px;
       }

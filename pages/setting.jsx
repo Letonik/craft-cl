@@ -1,11 +1,11 @@
 import React from 'react';
-import MainSidebar from "../components/MainSidebar/MainSidebar";
 import MainContainer from "../components/MainContainer";
+import Container from "../components/fake/Container";
 
 const Setting = () => {
   return (
     <MainContainer>
-      <div>setting</div>
+        <Container text={'SETTING'}/>
     </MainContainer>
 
   );

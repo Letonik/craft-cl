@@ -1,7 +1,6 @@
 import React from 'react';
 import CreateTemp from "./CreateTemp";
 import styled from "styled-components";
-import ModalCreater from "./ModalCreater";
 import Items from "./Items";
 
 
@@ -14,14 +13,9 @@ const Container = styled.div`
 
 const Templates = ({templates}) => {
 
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
-
   return (
     <Container>
-      <CreateTemp handleOpen={handleOpen}/>
-      <ModalCreater open={open} handleClose={handleClose}/>
+      <CreateTemp/>
       <Items templates={templates}/>
     </Container>
   );

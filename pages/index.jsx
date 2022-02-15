@@ -1,11 +1,12 @@
-
 import React from "react";
 import MainContainer from "../components/MainContainer";
+import Container from "../components/fake/Container";
+
 
 function App() {
   return (
     <MainContainer>
-      <div>Home</div>
+        <Container text={'HOME'}/>
     </MainContainer>
 
   );
