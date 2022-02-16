@@ -19,7 +19,7 @@ export const Viewport = ({ children, temp, media}) => {
       load = temp[0].phoneHtml
     }
     const json = lz.decompress(lz.decodeBase64(load));
-    actions.deserialize(json);
+/*    actions.deserialize(json);*/
   }, [])
   const {
     enabled,

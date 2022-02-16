@@ -16,6 +16,7 @@ import {getLocation} from "../../../store/reducers/locationReducer";
 import {useRouter} from "next/router";
 import {useSelector} from "react-redux";
 import {getLocationSelector, getMediaSelector} from "../../../store/selectors/selectors";
+import {AppContainer} from "../../../components/selectors/AppContainer";
 
 const theme = createMuiTheme({
   typography: {
@@ -45,6 +46,7 @@ function EditorPage() {
           <div className="h-full h-screen">
             <Editor
               resolver={{
+                AppContainer,
                 Container,
                 Text,
                 Custom1,
@@ -63,7 +65,7 @@ function EditorPage() {
                 <Frame>
                   <Element
                     canvas
-                    is={Container}
+                    is={AppContainer}
                     width="100%"
                     minHeight="500px"
                     height="auto"
