@@ -2,6 +2,7 @@ import { createStore, applyMiddleware, combineReducers } from 'redux'
 import { HYDRATE, createWrapper } from 'next-redux-wrapper'
 import thunkMiddleware from 'redux-thunk'
 import locationReducer from "./reducers/locationReducer";
+import mediaReducer from "./reducers/mediaReducer";
 
 const bindMiddleware = (middleware) => {
   if (process.env.NODE_ENV !== 'production') {
@@ -12,7 +13,8 @@ const bindMiddleware = (middleware) => {
 }
 
 const combinedReducer = combineReducers({
-  locationReducer
+  locationReducer,
+  mediaReducer
 })
 
 const reducer = (state, action) => {

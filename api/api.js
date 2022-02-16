@@ -12,6 +12,9 @@ export const tempsAPI = {
   setActive(id, code) {
     return axios.post(`/api/change_active`, {id, code})
   },
+  saveCode(code, id, html, device) {
+    axios.put(`/api/save_code`, {code, id, html, device})
+  },
 /*  getLocation() {
     return $instance.get(`api/show_location`)
   },

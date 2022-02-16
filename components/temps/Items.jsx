@@ -42,6 +42,7 @@ const Items = ({templates}) => {
         setOpen(true)
     }
     const router = useRouter();
+  const {id: code} = router.query
     return (
         <>
             <ModalSetActive open={open} handleClose={handleClose} id={id}/>
@@ -65,7 +66,7 @@ const Items = ({templates}) => {
                                 <Fab
                                     size="small" color='primary'
                                     style={{marginRight: '15px'}}
-                                    onClick={() => router.push({pathname: '/editor/' + item._id})}
+                                    onClick={() => router.push({pathname: `/editor/${code}/${item._id}`})}
                                 >
                                     <EditIcon/>
                                 </Fab>

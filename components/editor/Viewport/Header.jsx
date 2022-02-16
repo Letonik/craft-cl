@@ -3,11 +3,20 @@ import { Tooltip } from '@material-ui/core';
 import cx from 'classnames';
 import React from 'react';
 import styled from 'styled-components';
-
+import lz from 'lzutf8';
 import Checkmark from '../../../public/icons/check.svg';
 import Customize from '../../../public/icons/customize.svg';
 import RedoSvg from '../../../public/icons/toolbox/redo.svg';
 import UndoSvg from '../../../public/icons/toolbox/undo.svg';
+import DesktopMacIcon from '@material-ui/icons/DesktopMac';
+import TabletMacIcon from '@material-ui/icons/TabletMac';
+import PhoneIphoneIcon from '@material-ui/icons/PhoneIphone';
+import SaveIcon from '@material-ui/icons/Save';
+import {useDispatch, useSelector} from "react-redux";
+import {getMediaSelector} from "../../../store/selectors/selectors";
+import {changeMedia} from "../../../store/reducers/mediaReducer";
+import {useRouter} from "next/router";
+import {tempsAPI} from "../../../api/api";
 
 const HeaderDiv = styled.div`
   width: 100%;
@@ -18,7 +27,6 @@ const HeaderDiv = styled.div`
   background: #2c2d31;
   display: flex;
 `;
-
 const Btn = styled.a`
   display: flex;
   align-items: center;
@@ -34,7 +42,6 @@ const Btn = styled.a`
     opacity: 0.9;
   }
 `;
-
 const Item = styled.a`
   margin-right: 10px;
   cursor: pointer;
@@ -50,13 +57,45 @@ const Item = styled.a`
     cursor: not-allowed;
   `}
 `;
+const Media = styled.a`
+  margin-left: 30px;
+  display: flex;
+  div {
+    margin-right: 10px;
+    cursor: pointer;
+    svg {
+      width: 20px;
+      height: 20px;
+      fill: #13c2c2;
+      opacity:0.5;
+    } 
+  }
+  .active {
+    svg {
+      opacity:1;
+    } 
+  }
+`;
 
 export const Header = () => {
-  const { enabled, canUndo, canRedo, actions } = useEditor((state, query) => ({
+  const { query, enabled, canUndo, canRedo, actions } = useEditor((state, query) => ({
     enabled: state.options.enabled,
     canUndo: query.history.canUndo(),
     canRedo: query.history.canRedo(),
   }));
+  const router = useRouter()
+  const {id, code} = router.query
+  const dispatch = useDispatch()
+  const media = useSelector(state => getMediaSelector(state));
+  const setMedia = (device) => {
+    dispatch(changeMedia(device));
+  }
+
+  const saveCode = async () => {
+    const json = query.serialize();
+    const html = lz.encodeBase64(lz.compress(json));
+    await tempsAPI.saveCode(code, id, html, media)
+  }
 
   return (
     <HeaderDiv className="header text-white transition w-full">
@@ -73,6 +112,26 @@ export const Header = () => {
                 <RedoSvg />
               </Item>
             </Tooltip>
+            <Media>
+              <div
+                className={media == 'desktop' && 'active'}
+                onClick={() => setMedia('desktop')}
+              >
+                <DesktopMacIcon />
+              </div>
+              <div
+                className={media == 'tablet' && 'active'}
+                onClick={() => setMedia('tablet')}
+              >
+                <TabletMacIcon />
+              </div>
+              <div
+                className={media == 'phone' && 'active'}
+                onClick={() => setMedia('phone')}
+              >
+                <PhoneIphoneIcon />
+              </div>
+            </Media>
           </div>
         )}
         <div className="flex">
@@ -91,6 +150,20 @@ export const Header = () => {
             {enabled ? <Checkmark /> : <Customize />}
             {enabled ? 'Посмотреть' : 'Редактировать'}
           </Btn>
+          {enabled &&
+          <Btn
+            style={{marginLeft: "10px"}}
+            className={cx([
+              'transition cursor-pointer',
+              {
+                'bg-red': enabled,
+              },
+            ])}
+            onClick={saveCode}
+          >
+            <SaveIcon /> Сохранить
+          </Btn>
+          }
         </div>
       </div>
     </HeaderDiv>

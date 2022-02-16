@@ -1,7 +1,7 @@
 import React from 'react';
 import MainContainer from "../../components/MainContainer";
 import {useSelector} from "react-redux";
-import {getLocationSelector} from "../../store/selectors/locationSelectors";
+import {getLocationSelector} from "../../store/selectors/selectors";
 import {getLocation} from "../../store/reducers/locationReducer";
 import {wrapper} from "../../store/store";
 import * as axios from "axios";

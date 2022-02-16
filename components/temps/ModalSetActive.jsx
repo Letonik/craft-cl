@@ -28,12 +28,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Text = styled.div`
-    #outlined-basic {
       width: 350px;
       text-align: center;
       color: gray;
       font-size: 20px;
-    }
 `;
 const Btn = styled.div`
     display: flex;
@@ -73,11 +71,19 @@ export default function ModalSetActive({open, handleClose, id}) {
                             </Text>
                             <Btn>
                                 <Button
+                                    style={{marginRight: '20px'}}
                                     variant="outlined"
                                     color="secondary"
                                     onClick={changeActive}
                                 >
                                     КОНЕЧНО
+                                </Button>
+                                <Button
+                                  variant="outlined"
+                                  color="primary"
+                                  onClick={handleClose}
+                                >
+                                    ЕЩЕ ПОДУМАЮ
                                 </Button>
                             </Btn>
                         </form>

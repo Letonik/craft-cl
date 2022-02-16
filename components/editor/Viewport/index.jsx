@@ -3,8 +3,24 @@ import cx from 'classnames';
 import React, { useEffect } from 'react';
 import { Header } from './Header';
 import { Sidebar } from './Sidebar';
+import lz from 'lzutf8';
 
-export const Viewport = ({ children }) => {
+export const Viewport = ({ children, temp, media}) => {
+  const { actions } = useEditor();
+  useEffect(() => {
+    let load = '';
+    if (media === 'desktop') {
+      load = temp[0].deskHtml
+    }
+    if (media === 'tablet') {
+      load = temp[0].tabletHtml
+    }
+    if (media === 'phone') {
+      load = temp[0].phoneHtml
+    }
+    const json = lz.decompress(lz.decodeBase64(load));
+    actions.deserialize(json);
+  }, [])
   const {
     enabled,
     connectors,

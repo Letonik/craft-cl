@@ -1,15 +1,21 @@
-import { Editor, Frame, Element } from '@craftjs/core';
+import {Editor, Frame, Element, useEditor} from '@craftjs/core';
 import { createMuiTheme } from '@material-ui/core';
 import { ThemeProvider } from '@material-ui/styles';
-import React from 'react';
+import React, {useEffect, useMemo} from 'react';
 
-import { Viewport, RenderNode } from '../../components/editor';
-import { Container, Text } from '../../components/selectors';
-import { Button } from '../../components/selectors/Button';
-import { Custom1, OnlyButtons } from '../../components/selectors/Custom1';
-import { Custom2, Custom2VideoDrop } from '../../components/selectors/Custom2';
-import { Custom3, Custom3BtnDrop } from '../../components/selectors/Custom3';
-import { Video } from '../../components/selectors/Video';
+import { Viewport, RenderNode } from '../../../components/editor';
+import { Container, Text } from '../../../components/selectors';
+import { Button } from '../../../components/selectors/Button';
+import { Custom1, OnlyButtons } from '../../../components/selectors/Custom1';
+import { Custom2, Custom2VideoDrop } from '../../../components/selectors/Custom2';
+import { Custom3, Custom3BtnDrop } from '../../../components/selectors/Custom3';
+import { Video } from '../../../components/selectors/Video';
+import {wrapper} from "../../../store/store";
+import * as axios from "axios";
+import {getLocation} from "../../../store/reducers/locationReducer";
+import {useRouter} from "next/router";
+import {useSelector} from "react-redux";
+import {getLocationSelector, getMediaSelector} from "../../../store/selectors/selectors";
 
 const theme = createMuiTheme({
   typography: {
@@ -24,6 +30,16 @@ const theme = createMuiTheme({
 });
 
 function EditorPage() {
+  const router = useRouter()
+  const {id, code} = router.query
+  const locations = useSelector(state => getLocationSelector(state));
+  const media = useSelector(state => getMediaSelector(state));
+
+  const temp = useMemo(() => {
+    return  locations.filter(loc => loc.code === code)[0].temps.filter(temp => temp._id === id);
+    /*const json = lz.decompress(lz.decodeBase64(stateToLoad));
+    actions.deserialize(json);*/
+  }, [])
   return (
         <ThemeProvider theme={theme}>
           <div className="h-full h-screen">
@@ -43,7 +59,7 @@ function EditorPage() {
               enabled={false}
               onRender={RenderNode}
             >
-              <Viewport>
+              <Viewport temp={temp} media={media}>
                 <Frame>
                   <Element
                     canvas
@@ -55,6 +71,7 @@ function EditorPage() {
                     padding={['40', '40', '40', '40']}
                     custom={{ displayName: 'App' }}
                   >
+{/*
 
                     <Element
                       canvas
@@ -186,6 +203,7 @@ function EditorPage() {
                       />
 
                     </Element>
+*/}
 
                   </Element>
                 </Frame>
@@ -195,5 +213,10 @@ function EditorPage() {
         </ThemeProvider>
   );
 }
+
+export const getServerSideProps = wrapper.getServerSideProps((store) => async (context) => {
+  const response = await axios.get("http://localhost:5000/api/location")
+  await store.dispatch(await getLocation(response.data))
+})
 
 export default EditorPage;

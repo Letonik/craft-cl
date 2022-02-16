@@ -1,7 +1,7 @@
 import React, {useMemo} from 'react';
 import MainContainer from "../../components/MainContainer";
 import {useSelector} from "react-redux";
-import {getLocationSelector} from "../../store/selectors/locationSelectors";
+import {getLocationSelector} from "../../store/selectors/selectors";
 import * as axios from "axios";
 import {wrapper} from "../../store/store";
 import Templates from "../../components/temps/Templates";

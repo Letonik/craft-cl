@@ -6,23 +6,6 @@
     background: white;
 }
 
-/*.MuiPaper-root {
-    background: #2c2d31 !important;
-!*    color: white !important;*!
-}
-.MuiSvgIcon-root {
-    color: white !important;
-}
-
-.MuiButtonBase-root  {
-    color: white !important;
-}
-.MuiButtonBase-root:hover {
-    color: #13c2c2 !important;
-}
-.MuiButtonBase-root:hover .MuiSvgIcon-root {
-    color: #13c2c2 !important;
-}*/
 #sb .pro-sidebar {
     height: 100vh;
     background: #2c2d31;
