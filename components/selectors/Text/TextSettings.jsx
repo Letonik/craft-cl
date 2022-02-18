@@ -49,14 +49,15 @@ export const TextSettings = () => {
       </ToolbarSection>
       <ToolbarSection
         title="Appearance"
-        props={['color', 'shadow']}
-        summary={({ color, shadow }) => {
+        props={['color', 'shadow', 'colorHover']}
+        summary={({ color, shadow, colorHover }) => {
           return (
             <div className="fletext-right">
               <p
                 style={{
                   color: color && `rgba(${Object.values(color)})`,
                   textShadow: `0px 0px 2px rgba(0, 0, 0, ${shadow / 100})`,
+                  hover: {color: colorHover && `rgba(${Object.values(colorHover)})`}
                 }}
                 className="text-white text-right"
               >
@@ -66,7 +67,8 @@ export const TextSettings = () => {
           );
         }}
       >
-        <ToolbarItem full={true} propKey="color" type="color" label="Text" />
+        <ToolbarItem full={true} propKey="color" type="color" label="Текст" />
+        <ToolbarItem full={true} propKey="colorHover" type="color" label="Текст при наведении" />
         <ToolbarItem
           full={true}
           propKey="shadow"

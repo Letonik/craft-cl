@@ -8,20 +8,23 @@ export const ButtonSettings = () => {
     <React.Fragment>
       <ToolbarSection
         title="Colors"
-        props={['background', 'color']}
-        summary={({ background, color }) => {
+        props={['background', 'color', 'backgroundHover', 'colorHover']}
+        summary={({ background, color, backgroundHover, colorHover }) => {
           return (
             <div className="flex flex-row-reverse">
               <div
                 style={{
                   background:
                     background && `rgba(${Object.values(background)})`,
+                  hover: {background:
+                    backgroundHover && `rgba(${Object.values(backgroundHover)})`},
                 }}
                 className="shadow-md flex-end w-6 h-6 text-center flex items-center rounded-full bg-black"
               >
                 <p
                   style={{
                     color: color && `rgba(${Object.values(color)})`,
+                    hover: {color: colorHover && `rgba(${Object.values(colorHover)})`},
                   }}
                   className="text-white w-full text-center"
                 >
@@ -36,9 +39,16 @@ export const ButtonSettings = () => {
           full={true}
           propKey="background"
           type="bg"
-          label="Background"
+          label="Фон"
         />
-        <ToolbarItem full={true} propKey="color" type="color" label="Text" />
+        <ToolbarItem
+          full={true}
+          propKey="backgroundHover"
+          type="bg"
+          label="Фон при наведении"
+        />
+        <ToolbarItem full={true} propKey="color" type="color" label="Текст" />
+        <ToolbarItem full={true} propKey="colorHover" type="color" label="Текст при наведении" />
       </ToolbarSection>
       <ToolbarSection
         title="Margin"

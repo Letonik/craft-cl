@@ -20,12 +20,15 @@ import {tempsAPI} from "../../../api/api";
 
 const HeaderDiv = styled.div`
   width: 100%;
-  height: 45px;
+  height: auto;
   z-index: 99999;
   position: relative;
   padding: 0px 10px;
   background: #2c2d31;
   display: flex;
+  .head {
+    height: 45px;
+  }
 `;
 const Btn = styled.a`
   display: flex;
@@ -99,7 +102,7 @@ export const Header = () => {
 
   return (
     <HeaderDiv className="header text-white transition w-full">
-      <div className="items-center flex w-full px-4 justify-end">
+      <div className="items-center flex w-full px-4 justify-end head">
         {enabled && (
           <div className="flex-1 flex">
             <Tooltip title="Undo" placement="bottom">

@@ -1,61 +1,52 @@
 import React from 'react';
-
-import { ResizerApp } from '../ResizerApp';
+import {useEditor, useNode} from "@craftjs/core";
+import {useSelector} from "react-redux";
+import {getHeightSelector, getWidthSelector} from "../../../store/selectors/selectors";
+import {AppContainerSettings} from "./AppContainerSetting";
 
 const defaultProps = {
-  flexDirection: 'column',
-  alignItems: 'flex-start',
-  justifyContent: 'flex-start',
-  fillSpace: 'no',
   padding: ['0', '0', '0', '0'],
-  margin: ['0', '0', '0', '0'],
   background: { r: 255, g: 255, b: 255, a: 1 },
   color: { r: 0, g: 0, b: 0, a: 1 },
-  shadow: 0,
-  radius: 0,
   width: '100%',
   height: 'auto',
+  minHeight: '700px',
 };
 
 export const AppContainer = (props) => {
+
+  const maxWidth = useSelector(state => getWidthSelector(state));
+  const minHeight = useSelector(state => getHeightSelector(state));
   props = {
     ...defaultProps,
     ...props,
   };
+
+  const { connectors: {connect, drag} } = useNode();
+  const ar = [1, 3, 4]
   const {
-    flexDirection,
-    alignItems,
-    justifyContent,
-    fillSpace,
-    background,
-    color,
-    padding,
-    margin,
-    shadow,
-    radius,
     children,
+    padding,
+    background
   } = props;
   return (
-    <ResizerApp
-      propKey={{ width: 'width', height: 'height' }}
+    <div
+      ref={ref=> connect(drag(ref))}
+
       style={{
-        justifyContent,
-        flexDirection,
-        alignItems,
         background: `rgba(${Object.values(background)})`,
-        color: `rgba(${Object.values(color)})`,
+        maxWidth: maxWidth,
+        width: '100%',
+        minHeight: minHeight,
         padding: `${padding[0]}px ${padding[1]}px ${padding[2]}px ${padding[3]}px`,
-        margin: `${margin[0]}px ${margin[1]}px ${margin[2]}px ${margin[3]}px`,
-        boxShadow:
-          shadow === 0
-            ? 'none'
-            : `0px 3px 100px ${shadow}px rgba(0, 0, 0, 0.13)`,
-        borderRadius: `${radius}px`,
-        flex: fillSpace === 'yes' ? 1 : 'unset',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center'
       }}
     >
       {children}
-    </ResizerApp>
+
+    </div>
   );
 };
 
@@ -63,6 +54,15 @@ AppContainer.craft = {
   displayName: 'Container',
   props: defaultProps,
   rules: {
-    canDrag: () => true,
+    canDrag: () => false,
+  },
+  related: {
+    toolbar: AppContainerSettings,
   },
 };
+
+
+
+
+
+

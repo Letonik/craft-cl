@@ -10,6 +10,9 @@ import {Button} from '../../selectors/Button';
 import {Container} from '../../selectors/Container';
 import {Text} from '../../selectors/Text';
 import {Video} from '../../selectors/Video';
+import {ButtonWhite} from "../../selectors/Button/ButtonWhite";
+import {Custom1} from "../../selectors/Custom1";
+import {ButtonBlack} from "../../selectors/Button/ButtonBlack";
 
 
 const Subsection = styled.div`
@@ -32,21 +35,44 @@ const Item = styled.a`
     width: 100px;
     height: 100px;
     box-shadow: 0px 0px 5px 1px rgba(255, 255, 255, 0.3);
-    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
     background: #28282c;
     border-radius: 5px;
     box-sizing: border-box;
-    &:hover {
     padding: 12px;
-    border: 3px solid #13c2c2;
-      svg {
-        fill: #13c2c2;
-      }
-    }
-    svg {
+    div {
+      color:  #ffffff;
       width: 70px;
       height: 70px;
-      fill: #ffffff;
+       svg {
+        width: 100%;
+        height: 100%;
+        fill: #ffffff;
+      }
+    }
+    .widthText {
+       height: 90px;
+       svg {
+          width: 70px;
+          height: 60px;
+          fill: #ffffff;
+        }
+        div {
+          text-align: center
+        }
+      width: 100%;
+    }
+    &:hover {
+      padding: 12px;
+      border: 3px solid #13c2c2;
+        svg {
+          fill: #13c2c2;
+        }
+        div {
+          color: #13c2c2;
+        }
     }
   ${(props) =>
   props.move &&
@@ -82,7 +108,9 @@ export const MyComponents = () => {
           >
             <Tooltip title="Container" placement="right">
               <Item className="m-2 pb-2 cursor-pointer block" move>
-                <SquareSvg/>
+                <div>
+                  <SquareSvg/>
+                </div>
               </Item>
             </Tooltip>
           </div>
@@ -99,14 +127,18 @@ export const MyComponents = () => {
           >
             <Tooltip title="Text" placement="right">
               <Item className="m-2 pb-2 cursor-pointer block" move>
-                <TypeSvg/>
+                <div>
+                  <TypeSvg/>
+                </div>
               </Item>
             </Tooltip>
           </div>
           <div ref={(ref) => create(ref, <Video/>)}>
             <Tooltip title="Video" placement="right">
               <Item className="m-2 pb-2 cursor-pointer block" move>
-                <YoutubeSvg/>
+                <div>
+                  <YoutubeSvg/>
+                </div>
               </Item>
             </Tooltip>
           </div>
@@ -116,10 +148,37 @@ export const MyComponents = () => {
       <Subsection>
         <h2>КНОПКИ</h2>
         <div>
-          <div ref={(ref) => create(ref, <Button/>)}>
+          <div ref={(ref) => create(ref, <Button
+            buttonStyle="outline"
+            color={{ r: 255, g: 255, b: 255, a: 1 }}
+            colorHover={{ r: 179, g: 179, b: 179, a: 1 }}
+            background={{ r: 255, g: 255, b: 255, a: 1 }}
+            backgroundHover={{ r: 179, g: 179, b: 179, a: 1 }}
+            textTransform='uppercase'
+            />)}>
             <Tooltip title="Button" placement="right">
               <Item className="m-2 pb-2 cursor-pointer block" move>
-                <ButtonSvg/>
+                <div className='widthText'>
+                  <ButtonSvg/>
+                  <div>Белая</div>
+                </div>
+              </Item>
+            </Tooltip>
+          </div>
+          <div ref={(ref) => create(ref, <Button
+            buttonStyle="outline"
+            color={{ r: 0, g: 0, b: 0, a: 1 }}
+            colorHover={{ r: 179, g: 179, b: 179, a: 1 }}
+            background={{ r: 0, g: 0, b: 0, a: 1 }}
+            backgroundHover={{ r: 179, g: 179, b: 179, a: 1 }}
+            textTransform='uppercase'
+          />)}>
+            <Tooltip title="Button" placement="right">
+              <Item className="m-2 pb-2 cursor-pointer block" move>
+                <div className='widthText'>
+                  <ButtonSvg/>
+                  <div>Черная</div>
+                </div>
               </Item>
             </Tooltip>
           </div>

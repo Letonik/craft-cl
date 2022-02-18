@@ -7,6 +7,7 @@ import lz from 'lzutf8';
 
 export const Viewport = ({ children, temp, media}) => {
   const { actions } = useEditor();
+  debugger
   useEffect(() => {
     let load = '';
     if (media === 'desktop') {
@@ -19,8 +20,8 @@ export const Viewport = ({ children, temp, media}) => {
       load = temp[0].phoneHtml
     }
     const json = lz.decompress(lz.decodeBase64(load));
-/*    actions.deserialize(json);*/
-  }, [])
+ /*   actions.deserialize(json);*/
+  }, [media])
   const {
     enabled,
     connectors,

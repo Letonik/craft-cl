@@ -39,7 +39,7 @@ export const Sidebar = () => {
         </SidebarItem>
         <SidebarItem
           icon={CustomizeIcon}
-          title="Customize"
+          title="Стили"
           height={!layersVisible ? 'full' : '55%'}
           visible={toolbarVisible}
           onChange={(val) => setToolbarVisible(val)}
@@ -48,7 +48,7 @@ export const Sidebar = () => {
         </SidebarItem>
         <SidebarItem
           icon={LayerIcon}
-          title="Layers"
+          title="Дерево"
           height={!toolbarVisible ? 'full' : '45%'}
           visible={layersVisible}
           onChange={(val) => setLayerVisible(val)}

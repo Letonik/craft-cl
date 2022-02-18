@@ -17,6 +17,8 @@ import {useRouter} from "next/router";
 import {useSelector} from "react-redux";
 import {getLocationSelector, getMediaSelector} from "../../../store/selectors/selectors";
 import {AppContainer} from "../../../components/selectors/AppContainer";
+import {ButtonWhite} from "../../../components/selectors/Button/ButtonWhite";
+import {ButtonBlack} from "../../../components/selectors/Button/ButtonBlack";
 
 const theme = createMuiTheme({
   typography: {
@@ -57,6 +59,8 @@ function EditorPage() {
                 OnlyButtons,
                 Button,
                 Video,
+                ButtonWhite,
+                ButtonBlack,
               }}
               enabled={false}
               onRender={RenderNode}
@@ -70,10 +74,11 @@ function EditorPage() {
                     minHeight="500px"
                     height="auto"
                     background={{ r: 255, g: 255, b: 255, a: 1 }}
-                    padding={['40', '40', '40', '40']}
                     custom={{ displayName: 'App' }}
                   >
+
 {/*
+
 
                     <Element
                       canvas
@@ -205,7 +210,9 @@ function EditorPage() {
                       />
 
                     </Element>
+
 */}
+
 
                   </Element>
                 </Frame>

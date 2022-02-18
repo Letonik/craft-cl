@@ -41,6 +41,7 @@ export const Container = (props) => {
     <Resizer
       propKey={{ width: 'width', height: 'height' }}
       style={{
+        display: 'flex',
         justifyContent,
         flexDirection,
         alignItems,
