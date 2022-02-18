@@ -17,6 +17,11 @@ const defaultProps = {
   radius: 0,
   width: '100%',
   height: 'auto',
+  flexWrap: 'wrap',
+  gap: '0px',
+  boxSizing: 'border-box',
+  flexGrow: 1,
+  maxWidth: '100%'
 };
 
 export const Container = (props) => {
@@ -36,6 +41,11 @@ export const Container = (props) => {
     shadow,
     radius,
     children,
+    flexWrap,
+    gap,
+    boxSizing,
+    flexGrow,
+    maxWidth
   } = props;
   return (
     <Resizer
@@ -55,6 +65,11 @@ export const Container = (props) => {
             : `0px 3px 100px ${shadow}px rgba(0, 0, 0, 0.13)`,
         borderRadius: `${radius}px`,
         flex: fillSpace === 'yes' ? 1 : 'unset',
+        flexWrap: flexWrap,
+        gap: gap,
+        boxSizing: boxSizing,
+        flexGrow: flexGrow,
+        maxWidth:maxWidth
       }}
     >
       {children}

@@ -11,6 +11,7 @@ const defaultProps = {
   width: '100%',
   height: 'auto',
   minHeight: '700px',
+  boxSizing: 'border-box',
 };
 
 export const AppContainer = (props) => {
@@ -41,7 +42,8 @@ export const AppContainer = (props) => {
         padding: `${padding[0]}px ${padding[1]}px ${padding[2]}px ${padding[3]}px`,
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'center'
+        alignItems: 'center',
+        boxSizing: 'border-box',
       }}
     >
       {children}

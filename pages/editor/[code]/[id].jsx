@@ -19,6 +19,7 @@ import {getLocationSelector, getMediaSelector} from "../../../store/selectors/se
 import {AppContainer} from "../../../components/selectors/AppContainer";
 import {ButtonWhite} from "../../../components/selectors/Button/ButtonWhite";
 import {ButtonBlack} from "../../../components/selectors/Button/ButtonBlack";
+import {OneAndFour} from "../../../components/selectors/Templates/OneAndFour";
 
 const theme = createMuiTheme({
   typography: {
@@ -61,6 +62,7 @@ function EditorPage() {
                 Video,
                 ButtonWhite,
                 ButtonBlack,
+                OneAndFour
               }}
               enabled={false}
               onRender={RenderNode}

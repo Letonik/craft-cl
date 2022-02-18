@@ -1,7 +1,7 @@
-import { useEditor } from '@craftjs/core';
+import {useEditor, useNode} from '@craftjs/core';
 import { Tooltip } from '@material-ui/core';
 import cx from 'classnames';
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 import lz from 'lzutf8';
 import Checkmark from '../../../public/icons/check.svg';
@@ -12,29 +12,50 @@ import DesktopMacIcon from '@material-ui/icons/DesktopMac';
 import TabletMacIcon from '@material-ui/icons/TabletMac';
 import PhoneIphoneIcon from '@material-ui/icons/PhoneIphone';
 import SaveIcon from '@material-ui/icons/Save';
+import ArrowDropDownCircleIcon from '@material-ui/icons/ArrowDropDownCircle';
 import {useDispatch, useSelector} from "react-redux";
 import {getMediaSelector} from "../../../store/selectors/selectors";
 import {changeMedia} from "../../../store/reducers/mediaReducer";
 import {useRouter} from "next/router";
 import {tempsAPI} from "../../../api/api";
+import {Text} from "../../selectors/Text";
+import TypeSvg from "../../../public/icons/toolbox/text.svg";
+import {OneAndFour} from "../../selectors/Templates/OneAndFour";
 
 const HeaderDiv = styled.div`
   width: 100%;
   height: auto;
-  z-index: 99999;
+  z-index: 9998;
   position: relative;
   padding: 0px 10px;
   background: #2c2d31;
-  display: flex;
   .head {
     height: 45px;
   }
 `;
+
+const Templates = styled.div`
+  width: 100%;
+  height: 230px;
+  padding: 20px 20px;
+  &>div {
+     border: 2px solid white;
+     border-radius: 5px;
+     height: 100%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+  }
+  
+/*  background: #2c2d31;*/
+`;
+
 const Btn = styled.a`
   display: flex;
   align-items: center;
   padding: 5px 15px;
   border-radius: 3px;
+  margin-left: 10px;
   color: #fff;
   font-size: 13px;
   svg {
@@ -86,6 +107,9 @@ export const Header = () => {
     canUndo: query.history.canUndo(),
     canRedo: query.history.canRedo(),
   }));
+  const {
+    connectors: {create},
+  } = useEditor(() => ({}));
   const router = useRouter()
   const {id, code} = router.query
   const dispatch = useDispatch()
@@ -93,7 +117,10 @@ export const Header = () => {
   const setMedia = (device) => {
     dispatch(changeMedia(device));
   }
-
+  const [templates, setTemplates] = useState(false)
+  const closeOpenTemplates = () => {
+    templates ? setTemplates( false) : setTemplates( true)
+  }
   const saveCode = async () => {
     const json = query.serialize();
     const html = lz.encodeBase64(lz.compress(json));
@@ -138,6 +165,19 @@ export const Header = () => {
           </div>
         )}
         <div className="flex">
+          {enabled &&
+          <Btn
+            className={cx([
+              'transition cursor-pointer',
+              {
+                'bg-orange': enabled,
+              },
+            ])}
+            onClick={closeOpenTemplates}
+          >
+            <ArrowDropDownCircleIcon /> Шаблоны
+          </Btn>
+          }
           <Btn
             className={cx([
               'transition cursor-pointer',
@@ -155,7 +195,6 @@ export const Header = () => {
           </Btn>
           {enabled &&
           <Btn
-            style={{marginLeft: "10px"}}
             className={cx([
               'transition cursor-pointer',
               {
@@ -169,6 +208,23 @@ export const Header = () => {
           }
         </div>
       </div>
+      {templates &&
+        <Templates>
+          <div>
+            <div
+              ref={(ref) =>
+                create(ref, <OneAndFour/>)
+              }
+            >
+              <Tooltip title="4in1" placement="right">
+                <div className="cursor-pointer block" move>
+                  <img src="/onetofor.png" alt="" style={{width: '150px'}}/>
+                </div>
+              </Tooltip>
+            </div>
+          </div>
+        </Templates>
+      }
     </HeaderDiv>
   );
 };

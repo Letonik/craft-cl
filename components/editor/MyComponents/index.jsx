@@ -10,9 +10,6 @@ import {Button} from '../../selectors/Button';
 import {Container} from '../../selectors/Container';
 import {Text} from '../../selectors/Text';
 import {Video} from '../../selectors/Video';
-import {ButtonWhite} from "../../selectors/Button/ButtonWhite";
-import {Custom1} from "../../selectors/Custom1";
-import {ButtonBlack} from "../../selectors/Button/ButtonBlack";
 
 
 const Subsection = styled.div`
