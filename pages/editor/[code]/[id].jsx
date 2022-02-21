@@ -17,9 +17,13 @@ import {useRouter} from "next/router";
 import {useSelector} from "react-redux";
 import {getLocationSelector, getMediaSelector} from "../../../store/selectors/selectors";
 import {AppContainer} from "../../../components/selectors/AppContainer";
-import {ButtonWhite} from "../../../components/selectors/Button/ButtonWhite";
-import {ButtonBlack} from "../../../components/selectors/Button/ButtonBlack";
-import {OneAndFour} from "../../../components/selectors/Templates/OneAndFour";
+import {Image} from "../../../components/selectors/Image";
+import {ContainerGrid} from "../../../components/selectors/ContainerGrid";
+import {OneAndFourGrid} from "../../../components/selectors/Templates/OneAndFourGrid";
+import {ForDrop} from "../../../components/selectors/ForDrop";
+import {ThreeColumnsGrid} from "../../../components/selectors/Templates/ThreeColumnsGrid";
+import {TwoColumnsGrid} from "../../../components/selectors/Templates/TwoColumnsGrid";
+import {FourColumnsGrid} from "../../../components/selectors/Templates/FourColumnsGrid";
 
 const theme = createMuiTheme({
   typography: {
@@ -60,9 +64,13 @@ function EditorPage() {
                 OnlyButtons,
                 Button,
                 Video,
-                ButtonWhite,
-                ButtonBlack,
-                OneAndFour
+                Image,
+                ContainerGrid,
+                OneAndFourGrid,
+                ForDrop,
+                ThreeColumnsGrid,
+                TwoColumnsGrid,
+                FourColumnsGrid
               }}
               enabled={false}
               onRender={RenderNode}
@@ -78,143 +86,6 @@ function EditorPage() {
                     background={{ r: 255, g: 255, b: 255, a: 1 }}
                     custom={{ displayName: 'App' }}
                   >
-
-{/*
-
-
-                    <Element
-                      canvas
-                      is={Container}
-                      background={{ r: 39, g: 41, b: 41, a: 1 }}
-                      flexDirection="column"
-                      width="100%"
-                      height="auto"
-                      padding={['40', '40', '40', '40']}
-                      margin={['0', '0', '40', '0']}
-                      custom={{ displayName: 'ComplexSection' }}
-                    >
-                      <Element
-                        canvas
-                        background={{
-                          r: 76,
-                          g: 78,
-                          b: 78,
-                          a: 0,
-                        }}
-                        is={Container}
-                        flexDirection="row"
-                        margin={['0', '0', '0', '0']}
-                        width="100%"
-                        height="auto"
-                        alignItems="center"
-                        custom={{ displayName: 'Wrapper' }}
-                      >
-                        <Element
-                          canvas
-                          background={{
-                            r: 0,
-                            g: 0,
-                            b: 0,
-                            a: 0,
-                          }}
-                          is={Container}
-                          alignItems="center"
-                          padding={['0', '0', '0', '0']}
-                          flexDirection="row"
-                          width="350px"
-                          height="250px"
-                          custom={{ displayName: 'Square' }}
-                        >
-                          <Element
-                            canvas
-                            is={Container}
-                            justifyContent="center"
-                            alignItems="center"
-                            background={{
-                              r: 76,
-                              g: 78,
-                              b: 78,
-                              a: 1,
-                            }}
-                            shadow={25}
-                            width="90%"
-                            height="90%"
-                            padding={['10', '20', '10', '20']}
-                            custom={{ displayName: 'Outer' }}
-                          >
-                            <Element
-                              canvas
-                              is={Container}
-                              justifyContent="center"
-                              alignItems="center"
-                              background={{
-                                r: 76,
-                                g: 78,
-                                b: 78,
-                                a: 1,
-                              }}
-                              shadow={50}
-                              width="80%"
-                              height="80%"
-                              padding={['10', '20', '10', '20']}
-                              custom={{ displayName: 'Middle' }}
-                            >
-                              <Element
-                                canvas
-                                is={Container}
-                                justifyContent="center"
-                                alignItems="center"
-                                background={{
-                                  r: 76,
-                                  g: 78,
-                                  b: 78,
-                                  a: 1,
-                                }}
-                                shadow={50}
-                                width="60%"
-                                height="60%"
-                                padding={['10', '20', '10', '20']}
-                                custom={{ displayName: 'Inner' }}
-                              />
-                            </Element>
-                          </Element>
-                        </Element>
-
-                      </Element>
-                    </Element>
-
-                    <Element
-                      canvas
-                      is={Container}
-                      background={{ r: 39, g: 41, b: 41, a: 1 }}
-                      flexDirection="column"
-                      width="100%"
-                      height="auto"
-                      padding={['40', '40', '40', '40']}
-                      margin={['0', '0', '40', '0']}
-                      custom={{ displayName: 'ComplexSection' }}
-                    >
-
-                      <Custom2
-                        background={{
-                          r: 108,
-                          g: 126,
-                          b: 131,
-                          a: 1,
-                        }}
-                        height="400px"
-                        width="100%"
-                        padding={['0', '0', '0', '20']}
-                        margin={['0', '0', '0', '0']}
-                        shadow={40}
-                        flexDirection="row"
-                        alignItems="center"
-                      />
-
-                    </Element>
-
-*/}
-
 
                   </Element>
                 </Frame>

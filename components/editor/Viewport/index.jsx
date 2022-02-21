@@ -7,7 +7,6 @@ import lz from 'lzutf8';
 
 export const Viewport = ({ children, temp, media}) => {
   const { actions } = useEditor();
-  debugger
   useEffect(() => {
     let load = '';
     if (media === 'desktop') {

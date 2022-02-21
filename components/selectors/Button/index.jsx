@@ -17,7 +17,8 @@ const defaultProps = {
   margin: ['0', 'auto', '0', 'auto'],
   textComponent: {
     ...Text.craft.props,
-    textAlign: 'center',
+  textAlign: 'center',
+  alignSelf: 'auto'
   },
 };
 
@@ -31,8 +32,10 @@ const StyledButton = styled.button`
   props.buttonStyle === 'outline'
     ? `rgba(${Object.values(props.background)})`
     : 'transparent'};
-   margin: ${({ margin }) =>
+  margin: ${({ margin }) =>
   `${margin[0]}px ${margin[1]}px ${margin[2]}px ${margin[3]}px`};
+  align-self: ${({ alignSelf }) =>
+  `${alignSelf}`};
   width: auto;  
   display: block;
   padding: 7px 15px;
@@ -51,7 +54,7 @@ const StyledButton = styled.button`
      h2 {
         color: ${(props) =>
   `rgba(${Object.values(props.colorHover)})`} !important; 
-     } 
+     }    
   }
 `;
 
@@ -61,7 +64,6 @@ export const Button = (props) => {
     ...defaultProps,
     ...props,
   };
-  console.log(props)
   const {
     connectors: { connect },
   } = useNode((node) => ({

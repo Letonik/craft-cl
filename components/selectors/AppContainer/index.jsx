@@ -24,7 +24,6 @@ export const AppContainer = (props) => {
   };
 
   const { connectors: {connect, drag} } = useNode();
-  const ar = [1, 3, 4]
   const {
     children,
     padding,

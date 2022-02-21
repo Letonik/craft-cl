@@ -1,4 +1,4 @@
-import {useEditor, useNode} from '@craftjs/core';
+import {useEditor} from '@craftjs/core';
 import { Tooltip } from '@material-ui/core';
 import cx from 'classnames';
 import React, {useState} from 'react';
@@ -18,9 +18,10 @@ import {getMediaSelector} from "../../../store/selectors/selectors";
 import {changeMedia} from "../../../store/reducers/mediaReducer";
 import {useRouter} from "next/router";
 import {tempsAPI} from "../../../api/api";
-import {Text} from "../../selectors/Text";
-import TypeSvg from "../../../public/icons/toolbox/text.svg";
-import {OneAndFour} from "../../selectors/Templates/OneAndFour";
+import {OneAndFourGrid} from "../../selectors/Templates/OneAndFourGrid";
+import {ThreeColumnsGrid} from "../../selectors/Templates/ThreeColumnsGrid";
+import {TwoColumnsGrid} from "../../selectors/Templates/TwoColumnsGrid";
+import {FourColumnsGrid} from "../../selectors/Templates/FourColumnsGrid";
 
 const HeaderDiv = styled.div`
   width: 100%;
@@ -45,6 +46,9 @@ const Templates = styled.div`
      display: flex;
      justify-content: center;
      align-items: center;
+     &>div {
+      margin: 0 10px;
+     }
   }
   
 /*  background: #2c2d31;*/
@@ -213,12 +217,45 @@ export const Header = () => {
           <div>
             <div
               ref={(ref) =>
-                create(ref, <OneAndFour/>)
+                create(ref, <OneAndFourGrid/>)
               }
             >
               <Tooltip title="4in1" placement="right">
                 <div className="cursor-pointer block" move>
                   <img src="/onetofor.png" alt="" style={{width: '150px'}}/>
+                </div>
+              </Tooltip>
+            </div>
+            <div
+              ref={(ref) =>
+                create(ref, <TwoColumnsGrid/>)
+              }
+            >
+              <Tooltip title="4in1" placement="right">
+                <div className="cursor-pointer block" move>
+                  <img src="/2col.png" alt="" style={{width: '150px'}}/>
+                </div>
+              </Tooltip>
+            </div>
+            <div
+              ref={(ref) =>
+                create(ref, <ThreeColumnsGrid/>)
+              }
+            >
+              <Tooltip title="4in1" placement="right">
+                <div className="cursor-pointer block" move>
+                  <img src="/3col.png" alt="" style={{width: '150px'}}/>
+                </div>
+              </Tooltip>
+            </div>
+            <div
+              ref={(ref) =>
+                create(ref, <FourColumnsGrid/>)
+              }
+            >
+              <Tooltip title="4in1" placement="right">
+                <div className="cursor-pointer block" move>
+                  <img src="/4col.png" alt="" style={{width: '150px'}}/>
                 </div>
               </Tooltip>
             </div>

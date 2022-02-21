@@ -7,7 +7,7 @@ export const ButtonSettings = () => {
   return (
     <React.Fragment>
       <ToolbarSection
-        title="Colors"
+        title="Цвета"
         props={['background', 'color', 'backgroundHover', 'colorHover']}
         summary={({ background, color, backgroundHover, colorHover }) => {
           return (
@@ -51,7 +51,7 @@ export const ButtonSettings = () => {
         <ToolbarItem full={true} propKey="colorHover" type="color" label="Текст при наведении" />
       </ToolbarSection>
       <ToolbarSection
-        title="Margin"
+        title="Отступы"
         props={['margin']}
         summary={({ margin }) => {
           return `${margin[0] || 0}px ${margin[1] || 0}px ${margin[2] || 0}px ${
@@ -59,15 +59,21 @@ export const ButtonSettings = () => {
           }px`;
         }}
       >
-        <ToolbarItem propKey="margin" index={0} type="slider" label="Top" />
-        <ToolbarItem propKey="margin" index={1} type="slider" label="Right" />
-        <ToolbarItem propKey="margin" index={2} type="slider" label="Bottom" />
-        <ToolbarItem propKey="margin" index={3} type="slider" label="Left" />
+        <ToolbarItem propKey="margin" index={0} type="slider" label="Сверху" />
+        <ToolbarItem propKey="margin" index={1} type="slider" label="Справа" />
+        <ToolbarItem propKey="margin" index={2} type="slider" label="Снизу" />
+        <ToolbarItem propKey="margin" index={3} type="slider" label="Слева" />
+        <ToolbarItem propKey="alignSelf" type="radio" label="Прижать">
+          <ToolbarRadio value="auto" label="Авто" />
+          <ToolbarRadio value="start" label="Начало" />
+          <ToolbarRadio value="center" label="Центр" />
+          <ToolbarRadio value="end" label="Конец" />
+        </ToolbarItem>
       </ToolbarSection>
-      <ToolbarSection title="Decoration">
+      <ToolbarSection title="Стиль">
         <ToolbarItem propKey="buttonStyle" type="radio" label="Style">
-          <ToolbarRadio value="full" label="Full" />
-          <ToolbarRadio value="outline" label="Outline" />
+          <ToolbarRadio value="full" label="С фоном" />
+          <ToolbarRadio value="outline" label="Без фона" />
         </ToolbarItem>
       </ToolbarSection>
     </React.Fragment>

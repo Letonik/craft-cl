@@ -10,6 +10,7 @@ import {Button} from '../../selectors/Button';
 import {Container} from '../../selectors/Container';
 import {Text} from '../../selectors/Text';
 import {Video} from '../../selectors/Video';
+import {Image} from "../../selectors/Image";
 
 
 const Subsection = styled.div`
@@ -132,6 +133,15 @@ export const MyComponents = () => {
           </div>
           <div ref={(ref) => create(ref, <Video/>)}>
             <Tooltip title="Video" placement="right">
+              <Item className="m-2 pb-2 cursor-pointer block" move>
+                <div>
+                  <YoutubeSvg/>
+                </div>
+              </Item>
+            </Tooltip>
+          </div>
+          <div ref={(ref) => create(ref, <Image/>)}>
+            <Tooltip title="Image" placement="right">
               <Item className="m-2 pb-2 cursor-pointer block" move>
                 <div>
                   <YoutubeSvg/>
