@@ -55,7 +55,7 @@ Text.craft = {
     fontSize: '15',
     textAlign: 'left',
     fontWeight: '500',
-    color: { r: 155, g: 55, b: 105, a: 0.5 },
+    color: { r: 0, g: 0, b: 0, a: 1 },
     colorHover:  { r: 155, g: 55, b: 105, a: 0.5 },
     margin: [0, 0, 0, 0],
     shadow: 0,

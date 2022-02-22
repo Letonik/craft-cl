@@ -15,7 +15,7 @@ const useStyles = makeStyles({
     transition: '0.4s cubic-bezier(0.19, 1, 0.22, 1)',
   },
   checkedIcon: {
-    background: 'rgb(19, 115, 230)',
+    background: 'rgb(9,239,232)',
     borderColor: 'transparent',
     '&:before': {
       content: '""',
@@ -35,7 +35,7 @@ function StyledRadio(props) {
   return (
     <Radio
       disableRipple
-      color="default"
+      color="primary"
       checkedIcon={
         <span className={classnames(classes.icon, classes.checkedIcon)} />
       }

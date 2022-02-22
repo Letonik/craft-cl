@@ -9,7 +9,7 @@ export const ImageSettings = () => {
         <ToolbarItem
           full={true}
           propKey="src"
-          type="text"
+          type="images"
           label="Путь к изображению"
         />
       </ToolbarSection>

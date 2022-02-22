@@ -46,7 +46,7 @@ const Templates = styled.div`
   padding: 20px 20px;
   &>div {
      overflow: hidden;
-     overflow-x: scroll;
+     overflow-x: auto;
      border: 2px solid white;
      border-radius: 5px;
      height: 100%;

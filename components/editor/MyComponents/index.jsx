@@ -6,6 +6,7 @@ import ButtonSvg from '../../../public/icons/toolbox/button.svg';
 import SquareSvg from '../../../public/icons/toolbox/rectangle.svg';
 import TypeSvg from '../../../public/icons/toolbox/text.svg';
 import YoutubeSvg from '../../../public/icons/toolbox/video-line.svg';
+import ImageSvg from '../../../public/icons/image2.svg';
 import {Button} from '../../selectors/Button';
 import {Container} from '../../selectors/Container';
 import {Text} from '../../selectors/Text';
@@ -120,7 +121,7 @@ export const MyComponents = () => {
         <div>
           <div
             ref={(ref) =>
-              create(ref, <Text fontSize="12" textAlign="left" text="Hi there"/>)
+              create(ref, <Text fontSize="18" textAlign="left" text="Hi there"/>)
             }
           >
             <Tooltip title="Text" placement="right">
@@ -144,7 +145,7 @@ export const MyComponents = () => {
             <Tooltip title="Image" placement="right">
               <Item className="m-2 pb-2 cursor-pointer block" move>
                 <div>
-                  <YoutubeSvg/>
+                  <ImageSvg/>
                 </div>
               </Item>
             </Tooltip>

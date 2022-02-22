@@ -24,7 +24,7 @@ export const Toolbar = () => {
         <div
           className="px-5 py-2 flex flex-col items-center h-full justify-center text-center"
           style={{
-            color: 'rgba(0, 0, 0, 0.5607843137254902)',
+            color: 'rgba(255, 255, 255, 1)',
             fontSize: '11px',
           }}
         >

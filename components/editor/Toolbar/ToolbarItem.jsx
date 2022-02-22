@@ -5,13 +5,14 @@ import React from 'react';
 
 import { ToolbarDropdown } from './ToolbarDropdown';
 import { ToolbarTextInput } from './ToolbarTextInput';
+import {ToolbarImage} from "./ToolbarImage";
 
 const iOSBoxShadow =
   '0 3px 1px rgba(0,0,0,0.1),0 4px 8px rgba(0,0,0,0.13),0 0 0 1px rgba(0,0,0,0.02)';
 
 const SliderStyled = withStyles({
   root: {
-    color: '#3880ff',
+    color: '#13c2c2',
     height: 2,
     padding: '5px 0',
     width: '100%',
@@ -145,7 +146,18 @@ export const ToolbarItem = ({
             }
             {...props}
           />
-        ) : null}
+        ) : type === 'images' ? (
+          <ToolbarImage
+            value={value || ''}
+            onChange={(value) =>
+              setProp(
+                (props) =>
+                  (props[propKey] = onChange ? onChange(value) : value)
+              )
+            }
+            {...props}
+          />
+        ) :  null}
       </div>
     </Grid>
   );
