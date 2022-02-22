@@ -8,6 +8,7 @@ const defaultProps = {
   gap: '10',
   areasUp: "",
   areasDown: "",
+  gridTemplateColumns: 'none'
 };
 
 
@@ -22,6 +23,10 @@ const Grid = styled.div`
   width: 100%;  
   grid-template-areas: ${( props ) =>
     `${props.areasUp} ${props.areasDown}`};
+  grid-template-columns: ${({gridTemplateColumns}) =>
+  gridTemplateColumns !== 'none'
+    ? `${gridTemplateColumns};`
+    : 'none'};  
 `;
 
 export const ContainerGrid = (props) => {
@@ -39,6 +44,9 @@ export const ContainerGrid = (props) => {
 
   return (
     <Grid
+ /*     style={{
+        gridTemplateColumns: props.gridTemplateColumns ? props.gridTemplateColumns : 'none'
+      }}*/
       ref={connect}
       {...props}
     >

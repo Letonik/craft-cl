@@ -24,6 +24,16 @@ import {ForDrop} from "../../../components/selectors/ForDrop";
 import {ThreeColumnsGrid} from "../../../components/selectors/Templates/ThreeColumnsGrid";
 import {TwoColumnsGrid} from "../../../components/selectors/Templates/TwoColumnsGrid";
 import {FourColumnsGrid} from "../../../components/selectors/Templates/FourColumnsGrid";
+import {CustomGrid} from "../../../components/selectors/Templates/CustomGrid";
+import {ImageBottom} from "../../../components/selectors/ImageBottom";
+import {TwoColumnsBottom} from "../../../components/selectors/Templates/TwoColumnsBottom";
+import {ForDropBottom} from "../../../components/selectors/ForDrop/ForDropBottom";
+import {ThreeColumnsBottom} from "../../../components/selectors/Templates/ThreeColumnsBottom";
+import {FourColumnsBottom} from "../../../components/selectors/Templates/FourColumnsBottom";
+import {TextForGrid} from "../../../components/selectors/TextForGrid";
+import {TwoColumnsText} from "../../../components/selectors/Templates/TwoColumnsText";
+import {ThreeColumnsText} from "../../../components/selectors/Templates/ThreeColumnsText";
+import {FourColumnsText} from "../../../components/selectors/Templates/FourColumnsText";
 
 const theme = createMuiTheme({
   typography: {
@@ -68,9 +78,19 @@ function EditorPage() {
                 ContainerGrid,
                 OneAndFourGrid,
                 ForDrop,
+                ForDropBottom,
                 ThreeColumnsGrid,
                 TwoColumnsGrid,
-                FourColumnsGrid
+                FourColumnsGrid,
+                CustomGrid,
+                ImageBottom,
+                TwoColumnsBottom,
+                ThreeColumnsBottom,
+                FourColumnsBottom,
+                TextForGrid,
+                TwoColumnsText,
+                ThreeColumnsText,
+                FourColumnsText
               }}
               enabled={false}
               onRender={RenderNode}

@@ -1,7 +1,8 @@
-import {useNode} from "@craftjs/core";
+import {Element, useNode} from "@craftjs/core";
 import React from "react";
 import styled from "styled-components";
 import {ForDropSettings} from "./ForDropSettings";
+import {Text} from "../Text";
 
 const defaultProps = {
   flexDirection: 'column',
@@ -10,17 +11,16 @@ const defaultProps = {
 };
 
 const Wrapper = styled.div`
-  position: absolute;
-  top: 0;
   display: flex;
   flex-direction: column;
   justify-content: ${({ justifyContent }) =>
   `${justifyContent}`};
   align-items: ${({ alignItems }) =>
   `${alignItems}`};
+  min-height: 30px;
 `;
 
-export const ForDrop = (props) => {
+export const ForDropBottom = (props) => {
   props = {
     ...defaultProps,
     ...props,
@@ -30,7 +30,7 @@ export const ForDrop = (props) => {
   } = useNode();
   return (
     <Wrapper ref={connect}
-             className="w-full h-full"
+             className="w-full"
              {...props}
     >
       {props.children}
@@ -38,7 +38,7 @@ export const ForDrop = (props) => {
   );
 };
 
-ForDrop.craft = {
+ForDropBottom.craft = {
   displayName: 'Текст и Кнопки',
   props: defaultProps,
   related: {

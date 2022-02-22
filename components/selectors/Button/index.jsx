@@ -37,7 +37,7 @@ const StyledButton = styled.button`
   align-self: ${({ alignSelf }) =>
   `${alignSelf}`};
   width: auto;  
-  display: block;
+  display: inline-block;
   padding: 7px 15px;
   cursor: pointer;
   &:hover {

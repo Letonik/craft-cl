@@ -22,6 +22,12 @@ import {OneAndFourGrid} from "../../selectors/Templates/OneAndFourGrid";
 import {ThreeColumnsGrid} from "../../selectors/Templates/ThreeColumnsGrid";
 import {TwoColumnsGrid} from "../../selectors/Templates/TwoColumnsGrid";
 import {FourColumnsGrid} from "../../selectors/Templates/FourColumnsGrid";
+import {CustomGrid} from "../../selectors/Templates/CustomGrid";
+import {TwoColumnsBottom} from "../../selectors/Templates/TwoColumnsBottom";
+import {ThreeColumnsBottom} from "../../selectors/Templates/ThreeColumnsBottom";
+import {FourColumnsBottom} from "../../selectors/Templates/FourColumnsBottom";
+import {TwoColumnsText} from "../../selectors/Templates/TwoColumnsText";
+import {ThreeColumnsText} from "../../selectors/Templates/ThreeColumnsText";
 
 const HeaderDiv = styled.div`
   width: 100%;
@@ -34,12 +40,13 @@ const HeaderDiv = styled.div`
     height: 45px;
   }
 `;
-
 const Templates = styled.div`
   width: 100%;
   height: 230px;
   padding: 20px 20px;
   &>div {
+     overflow: hidden;
+     overflow-x: scroll;
      border: 2px solid white;
      border-radius: 5px;
      height: 100%;
@@ -47,13 +54,20 @@ const Templates = styled.div`
      justify-content: center;
      align-items: center;
      &>div {
-      margin: 0 10px;
+       margin: 0 10px;
+     }
+     &::-webkit-scrollbar {
+       height: 3px;
+       background-color: #5a5a5a;
+     }
+     &::-webkit-scrollbar-thumb {
+        background-color: #ff1919;
+        border-radius: 9em;
      }
   }
   
 /*  background: #2c2d31;*/
 `;
-
 const Btn = styled.a`
   display: flex;
   align-items: center;
@@ -256,6 +270,83 @@ export const Header = () => {
               <Tooltip title="4in1" placement="right">
                 <div className="cursor-pointer block" move>
                   <img src="/4col.png" alt="" style={{width: '150px'}}/>
+                </div>
+              </Tooltip>
+            </div>
+            <div
+              ref={(ref) =>
+                create(ref, <CustomGrid/>)
+              }
+            >
+              <Tooltip title="4in1" placement="right">
+                <div className="cursor-pointer block" move>
+                  <img src="/5cus.png" alt="" style={{width: '150px'}}/>
+                </div>
+              </Tooltip>
+            </div>
+            <div
+              ref={(ref) =>
+                create(ref, <TwoColumnsBottom/>)
+              }
+            >
+              <Tooltip title="2col" placement="right">
+                <div className="cursor-pointer block" move>
+                  <img src="/2colText.png" alt="" style={{width: '150px'}}/>
+                </div>
+              </Tooltip>
+            </div>
+            <div
+              ref={(ref) =>
+                create(ref, <ThreeColumnsBottom/>)
+              }
+            >
+              <Tooltip title="2col" placement="right">
+                <div className="cursor-pointer block" move>
+                  <img src="/3colText.png" alt="" style={{width: '150px'}}/>
+                </div>
+              </Tooltip>
+            </div>
+            <div
+              ref={(ref) =>
+                create(ref, <FourColumnsBottom/>)
+              }
+            >
+              <Tooltip title="2col" placement="right">
+                <div className="cursor-pointer block" move>
+                  <img src="/4colText.png" alt="" style={{width: '150px'}}/>
+                </div>
+              </Tooltip>
+            </div>
+            <div
+              ref={(ref) =>
+                create(ref, <TwoColumnsText/>)
+              }
+            >
+              <Tooltip title="2col" placement="right">
+                <div className="cursor-pointer block" move>
+                  <img src="/2colBlock.png" alt="" style={{width: '150px'}}/>
+                </div>
+              </Tooltip>
+            </div>
+            <div
+              ref={(ref) =>
+                create(ref, <ThreeColumnsText/>)
+              }
+            >
+              <Tooltip title="2col" placement="right">
+                <div className="cursor-pointer block" move>
+                  <img src="/3colBlock.png" alt="" style={{width: '150px'}}/>
+                </div>
+              </Tooltip>
+            </div>
+            <div
+              ref={(ref) =>
+                create(ref, <ThreeColumnsText/>)
+              }
+            >
+              <Tooltip title="2col" placement="right">
+                <div className="cursor-pointer block" move>
+                  <img src="/4colBlock.png" alt="" style={{width: '150px'}}/>
                 </div>
               </Tooltip>
             </div>
