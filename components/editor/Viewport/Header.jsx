@@ -41,10 +41,14 @@ const HeaderDiv = styled.div`
   }
 `;
 const Templates = styled.div`
-  width: 100%;
   height: 230px;
+   width: 100%;
   padding: 20px 20px;
+  overflow-x: auto;
   &>div {
+     margin: auto;
+     width: 100%;
+     max-width: 1200px;
      overflow: hidden;
      overflow-x: auto;
      border: 2px solid white;
@@ -235,7 +239,7 @@ export const Header = () => {
               }
             >
               <Tooltip title="4in1" placement="right">
-                <div className="cursor-pointer block" move>
+                <div className="cursor-pointer block" move style={{width: '150px'}}>
                   <img src="/onetofor.png" alt="" style={{width: '150px'}}/>
                 </div>
               </Tooltip>
@@ -246,7 +250,7 @@ export const Header = () => {
               }
             >
               <Tooltip title="4in1" placement="right">
-                <div className="cursor-pointer block" move>
+                <div className="cursor-pointer block" move style={{width: '150px'}}>
                   <img src="/2col.png" alt="" style={{width: '150px'}}/>
                 </div>
               </Tooltip>
@@ -257,7 +261,7 @@ export const Header = () => {
               }
             >
               <Tooltip title="4in1" placement="right">
-                <div className="cursor-pointer block" move>
+                <div className="cursor-pointer block" move style={{width: '150px'}}>
                   <img src="/3col.png" alt="" style={{width: '150px'}}/>
                 </div>
               </Tooltip>
@@ -268,7 +272,7 @@ export const Header = () => {
               }
             >
               <Tooltip title="4in1" placement="right">
-                <div className="cursor-pointer block" move>
+                <div className="cursor-pointer block" move style={{width: '150px'}}>
                   <img src="/4col.png" alt="" style={{width: '150px'}}/>
                 </div>
               </Tooltip>
@@ -279,7 +283,7 @@ export const Header = () => {
               }
             >
               <Tooltip title="4in1" placement="right">
-                <div className="cursor-pointer block" move>
+                <div className="cursor-pointer block" move style={{width: '150px'}}>
                   <img src="/5cus.png" alt="" style={{width: '150px'}}/>
                 </div>
               </Tooltip>
@@ -290,7 +294,7 @@ export const Header = () => {
               }
             >
               <Tooltip title="2col" placement="right">
-                <div className="cursor-pointer block" move>
+                <div className="cursor-pointer block" move style={{width: '150px'}}>
                   <img src="/2colText.png" alt="" style={{width: '150px'}}/>
                 </div>
               </Tooltip>
@@ -301,7 +305,7 @@ export const Header = () => {
               }
             >
               <Tooltip title="2col" placement="right">
-                <div className="cursor-pointer block" move>
+                <div className="cursor-pointer block" move style={{width: '150px'}}>
                   <img src="/3colText.png" alt="" style={{width: '150px'}}/>
                 </div>
               </Tooltip>
@@ -312,7 +316,7 @@ export const Header = () => {
               }
             >
               <Tooltip title="2col" placement="right">
-                <div className="cursor-pointer block" move>
+                <div className="cursor-pointer block" move style={{width: '150px'}}>
                   <img src="/4colText.png" alt="" style={{width: '150px'}}/>
                 </div>
               </Tooltip>
@@ -323,7 +327,7 @@ export const Header = () => {
               }
             >
               <Tooltip title="2col" placement="right">
-                <div className="cursor-pointer block" move>
+                <div className="cursor-pointer block" move style={{width: '150px'}}>
                   <img src="/2colBlock.png" alt="" style={{width: '150px'}}/>
                 </div>
               </Tooltip>
@@ -334,7 +338,7 @@ export const Header = () => {
               }
             >
               <Tooltip title="2col" placement="right">
-                <div className="cursor-pointer block" move>
+                <div className="cursor-pointer block" move style={{width: '150px'}}>
                   <img src="/3colBlock.png" alt="" style={{width: '150px'}}/>
                 </div>
               </Tooltip>
@@ -345,7 +349,7 @@ export const Header = () => {
               }
             >
               <Tooltip title="2col" placement="right">
-                <div className="cursor-pointer block" move>
+                <div className="cursor-pointer block" move style={{width: '150px'}}>
                   <img src="/4colBlock.png" alt="" style={{width: '150px'}}/>
                 </div>
               </Tooltip>

@@ -8,6 +8,7 @@ import Fade from "@material-ui/core/Fade";
 import {makeStyles} from "@material-ui/core/styles";
 import styled from "styled-components";
 import Dropzone from "react-dropzone";
+import {tempsAPI} from "../../../api/api";
 
 
 const Drop = styled.div`
@@ -25,10 +26,12 @@ const Drop = styled.div`
 `;
 
 
-function DropImage() {
+function DropImage({setFile}) {
   const [fileNames, setFileNames] = useState([]);
-  const handleDrop = acceptedFiles =>
+  const handleDrop = (acceptedFiles) => {
+    setFile(acceptedFiles)
     setFileNames(acceptedFiles.map(file => file.name));
+  }
 
   return (
     <Drop>
@@ -36,7 +39,7 @@ function DropImage() {
         {({ getRootProps, getInputProps }) => (
           <div {...getRootProps({ className: "dropzone" })}>
             <input {...getInputProps()} />
-            <p>Drag'n'drop files, or click to select files</p>
+            <p>Перенесите изображение или кликните на выделенную область, чтобы выбрать его...</p>
           </div>
         )}
       </Dropzone>
@@ -77,13 +80,19 @@ const Btn = styled.div`
 
 
 function ModalCreater({open, handleClose}) {
+  const [file, setFile] = useState(undefined)
+  console.log(file)
   const classes = useStyles();
-  const dispatch = useDispatch();
-  const router = useRouter()
-/*  const createNewTemp = () => {
-    dispatch(createTemp(name, id))
-    handleClose()
-  }*/
+  const changeImage = async () => {
+    let formData = new FormData();
+/*    formData.append('image', file[i]);*/
+    for(let i=0; i < file.length; i++){
+      formData.append('image', file[i]);
+    }
+    const response = await tempsAPI.saveImage(formData)
+    debugger
+  }
+
   return (
     <div>
       <Modal
@@ -101,7 +110,7 @@ function ModalCreater({open, handleClose}) {
         <Fade in={open}>
           <div className={classes.paper}>
             <form className={classes.root} noValidate autoComplete="off">
-              <DropImage/>
+              <DropImage setFile={setFile}/>
               <Btn>
                 <Button
                   variant="contained"
@@ -110,6 +119,7 @@ function ModalCreater({open, handleClose}) {
                     color: '#fff',
                     marginRight: '20px'
                   }}
+                  onClick={changeImage}
                 >
                   ПРИМЕНИТЬ
                 </Button>

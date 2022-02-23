@@ -15,6 +15,11 @@ export const tempsAPI = {
   saveCode(code, id, html, device) {
     axios.put(`/api/save_code`, {code, id, html, device})
   },
+  saveImage(data) {
+    return axios.post(`/api/save_image`, data, {
+      headers: {'Content-Type': 'multipart/form-data'}
+    })
+  },
 /*  getLocation() {
     return $instance.get(`api/show_location`)
   },
