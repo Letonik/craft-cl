@@ -7,11 +7,15 @@ import SquareSvg from '../../../public/icons/toolbox/rectangle.svg';
 import TypeSvg from '../../../public/icons/toolbox/text.svg';
 import YoutubeSvg from '../../../public/icons/toolbox/video-line.svg';
 import ImageSvg from '../../../public/icons/image2.svg';
+import SwiperSvg from '../../../public/icons/layout-slider_1.svg';
 import {Button} from '../../selectors/Button';
 import {Container} from '../../selectors/Container';
 import {Text} from '../../selectors/Text';
 import {Video} from '../../selectors/Video';
 import {Image} from "../../selectors/Image";
+import {SwiperCom} from "../../selectors/Swiper";
+import {OneImage} from "../../selectors/ImageComponent";
+import {OneSwiper} from "../../selectors/Swiper/SwiperComponent";
 
 
 const Subsection = styled.div`
@@ -141,7 +145,7 @@ export const MyComponents = () => {
               </Item>
             </Tooltip>
           </div>
-          <div ref={(ref) => create(ref, <Image/>)}>
+          <div ref={(ref) => create(ref, <OneImage/>)}>
             <Tooltip title="Image" placement="right">
               <Item className="m-2 pb-2 cursor-pointer block" move>
                 <div>
@@ -150,6 +154,15 @@ export const MyComponents = () => {
               </Item>
             </Tooltip>
           </div>
+          <div ref={(ref) => create(ref, <OneSwiper/>)}>
+          <Tooltip title="Swiper" placement="right">
+            <Item className="m-2 pb-2 cursor-pointer block" move>
+              <div>
+                <SwiperSvg/>
+              </div>
+            </Item>
+          </Tooltip>
+        </div>
         </div>
       </Subsection>
 

@@ -3,6 +3,7 @@ import React from 'react';
 import { ContainerSettings } from './ContainerSettings';
 
 import { Resizer } from '../Resizer';
+import {useNode} from "@craftjs/core";
 
 const defaultProps = {
   flexDirection: 'column',
@@ -30,6 +31,11 @@ export const Container = (props) => {
     ...props,
   };
   const {
+    connectors: { connect },
+  } = useNode((node) => ({
+    selected: node.events.selected,
+  }));
+  const {
     flexDirection,
     alignItems,
     justifyContent,
@@ -50,6 +56,7 @@ export const Container = (props) => {
   return (
     <Resizer
       propKey={{ width: 'width', height: 'height' }}
+      ref={connect}
       style={{
         display: 'flex',
         justifyContent,
@@ -81,7 +88,10 @@ Container.craft = {
   displayName: 'Container',
   props: defaultProps,
   rules: {
+    canDrop: () => true,
     canDrag: () => true,
+    canMoveIn: () => true,
+    canMoveOut: () => true
   },
   related: {
     toolbar: ContainerSettings,

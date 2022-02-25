@@ -5,8 +5,8 @@ import { ContainerGrid } from '../ContainerGrid';
 import {ContainerGridSettings} from "../ContainerGrid/ContainerGridSettings";
 
 const defaultProps = {
-  paddingWidth: '40',
-  paddingHeight: '40',
+  paddingWidth: '3',
+  paddingHeight: '3',
   gap: '10'
 };
 

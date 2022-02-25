@@ -144,9 +144,10 @@ export const Header = () => {
     templates ? setTemplates( false) : setTemplates( true)
   }
   const saveCode = async () => {
-    const json = query.serialize();
+    console.log(query)
+/*    const json = query.serialize();
     const html = lz.encodeBase64(lz.compress(json));
-    await tempsAPI.saveCode(code, id, html, media)
+    await tempsAPI.saveCode(code, id, html, media)*/
   }
 
   return (
@@ -233,6 +234,30 @@ export const Header = () => {
       {templates &&
         <Templates>
           <div>
+
+             {/*                 Delete                    */}
+            <div>
+                <div style={{width: '150px'}}>
+                  <img src="/onetofor.png" alt="" style={{width: '150px'}}/>
+                </div>
+            </div>
+            <div>
+              <div style={{width: '150px'}}>
+                <img src="/onetofor.png" alt="" style={{width: '150px'}}/>
+              </div>
+            </div>
+            <div>
+              <div style={{width: '150px'}}>
+                <img src="/onetofor.png" alt="" style={{width: '150px'}}/>
+              </div>
+            </div>
+            <div>
+              <div style={{width: '150px'}}>
+                <img src="/onetofor.png" alt="" style={{width: '150px'}}/>
+              </div>
+            </div>
+           {/*                  ////////////               */}
+
             <div
               ref={(ref) =>
                 create(ref, <OneAndFourGrid/>)

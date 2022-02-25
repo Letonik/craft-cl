@@ -4,6 +4,19 @@ import React, { useEffect } from 'react';
 import { Header } from './Header';
 import { Sidebar } from './Sidebar';
 import lz from 'lzutf8';
+import styled from "styled-components";
+
+
+const EditorBlock = styled.div`
+   &::-webkit-scrollbar {
+       width: 3px;
+       background-color: #5a5a5a;
+     }
+   &::-webkit-scrollbar-thumb {
+      background-color: #ff1919;
+      border-radius: 9em;
+   }
+`;
 
 export const Viewport = ({ children, temp, media}) => {
   const { actions } = useEditor();
@@ -58,7 +71,7 @@ export const Viewport = ({ children, temp, media}) => {
       >
         <div className="page-container flex flex-1 h-full flex-col">
           <Header />
-          <div
+          <EditorBlock
             className={cx([
               'craftjs-renderer flex-1 h-full w-full transition overflow-auto',
               {
@@ -70,7 +83,7 @@ export const Viewport = ({ children, temp, media}) => {
             <div className="relative flex-col flex items-center py-2 px-5">
               {children}
             </div>
-          </div>
+          </EditorBlock>
         </div>
         <Sidebar />
       </div>

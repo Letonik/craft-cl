@@ -34,6 +34,9 @@ import {TextForGrid} from "../../../components/selectors/TextForGrid";
 import {TwoColumnsText} from "../../../components/selectors/Templates/TwoColumnsText";
 import {ThreeColumnsText} from "../../../components/selectors/Templates/ThreeColumnsText";
 import {FourColumnsText} from "../../../components/selectors/Templates/FourColumnsText";
+import {SwiperCom} from "../../../components/selectors/Swiper";
+import {OneImage} from "../../../components/selectors/ImageComponent";
+import {OneSwiper} from "../../../components/selectors/Swiper/SwiperComponent";
 
 const theme = createMuiTheme({
   typography: {
@@ -90,7 +93,10 @@ function EditorPage() {
                 TextForGrid,
                 TwoColumnsText,
                 ThreeColumnsText,
-                FourColumnsText
+                FourColumnsText,
+                SwiperCom,
+                OneImage,
+                OneSwiper
               }}
               enabled={false}
               onRender={RenderNode}

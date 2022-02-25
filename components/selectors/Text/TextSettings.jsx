@@ -8,7 +8,7 @@ export const TextSettings = () => {
   return (
     <React.Fragment>
       <ToolbarSection
-        title="Typography"
+        title="Типография"
         props={['fontSize', 'fontWeight', 'textAlign']}
         summary={({ fontSize, fontWeight, textAlign }) => {
           return `${fontSize || ''}, ${weightDescription(
@@ -16,25 +16,29 @@ export const TextSettings = () => {
           )}, ${capitalize(textAlign)}`;
         }}
       >
+        <ToolbarItem propKey="fontFamily" type="radio" label="Шрифт">
+          <ToolbarRadio value="Bodoni Cyrillic" label="Bodoni" />
+          <ToolbarRadio value="Futura PT" label="Futura" />
+        </ToolbarItem>
         <ToolbarItem
           full={true}
           propKey="fontSize"
           type="slider"
-          label="Font Size"
+          label="Размер"
         />
-        <ToolbarItem propKey="textAlign" type="radio" label="Align">
-          <ToolbarRadio value="left" label="Left" />
-          <ToolbarRadio value="center" label="Center" />
-          <ToolbarRadio value="right" label="Right" />
+        <ToolbarItem propKey="textAlign" type="radio" label="Расположение">
+          <ToolbarRadio value="left" label="Лево" />
+          <ToolbarRadio value="center" label="Центр" />
+          <ToolbarRadio value="right" label="Право" />
         </ToolbarItem>
-        <ToolbarItem propKey="fontWeight" type="radio" label="Weight">
-          <ToolbarRadio value="400" label="Regular" />
-          <ToolbarRadio value="500" label="Medium" />
-          <ToolbarRadio value="700" label="Bold" />
+        <ToolbarItem propKey="fontWeight" type="radio" label="Толшина">
+          <ToolbarRadio value="400" label="400" />
+          <ToolbarRadio value="500" label="500" />
+          <ToolbarRadio value="700" label="700" />
         </ToolbarItem>
       </ToolbarSection>
       <ToolbarSection
-        title="Margin"
+        title="Отступы"
         props={['margin']}
         summary={({ margin }) => {
           return `${margin[0] || 0}px ${margin[1] || 0}px ${margin[2] || 0}px ${
@@ -42,13 +46,13 @@ export const TextSettings = () => {
           }px`;
         }}
       >
-        <ToolbarItem propKey="margin" index={0} type="slider" label="Top" />
-        <ToolbarItem propKey="margin" index={1} type="slider" label="Right" />
-        <ToolbarItem propKey="margin" index={2} type="slider" label="Bottom" />
-        <ToolbarItem propKey="margin" index={3} type="slider" label="Left" />
+        <ToolbarItem propKey="margin" index={0} type="slider" label="Верх" />
+        <ToolbarItem propKey="margin" index={1} type="slider" label="Право" />
+        <ToolbarItem propKey="margin" index={2} type="slider" label="Низ" />
+        <ToolbarItem propKey="margin" index={3} type="slider" label="Лево" />
       </ToolbarSection>
       <ToolbarSection
-        title="Appearance"
+        title="Декор"
         props={['color', 'shadow', 'colorHover']}
         summary={({ color, shadow, colorHover }) => {
           return (
@@ -67,13 +71,13 @@ export const TextSettings = () => {
           );
         }}
       >
-        <ToolbarItem full={true} propKey="color" type="color" label="Текст" />
-        <ToolbarItem full={true} propKey="colorHover" type="color" label="Текст при наведении" />
+        <ToolbarItem full={true} propKey="color" type="color" label="Цвет" />
+        <ToolbarItem full={true} propKey="colorHover" type="color" label="Цвет при наведении" />
         <ToolbarItem
           full={true}
           propKey="shadow"
           type="slider"
-          label="Shadow"
+          label="Тени"
         />
       </ToolbarSection>
     </React.Fragment>

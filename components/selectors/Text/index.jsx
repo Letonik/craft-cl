@@ -14,7 +14,8 @@ export const Text = ({
   text,
   margin,
   colorHover,
-  textTransform
+  textTransform,
+  fontFamily
 }) => {
   const {
     connectors: { connect },
@@ -43,6 +44,7 @@ export const Text = ({
           textAlign,
           hover: {color: `rgba(${Object.values(colorHover)})`},
           color:`rgba(${Object.values(color)})`,
+          fontFamily: fontFamily,
           textTransform
         }}
       />
@@ -60,6 +62,7 @@ Text.craft = {
     margin: [0, 0, 0, 0],
     shadow: 0,
     text: 'Text',
+    fontFamily: 'Bodoni'
   },
   related: {
     toolbar: TextSettings,
