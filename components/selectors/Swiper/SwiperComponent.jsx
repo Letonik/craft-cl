@@ -4,6 +4,7 @@ import {Image} from '../Image';
 import { ContainerGrid } from '../ContainerGrid';
 import {ContainerGridSettings} from "../ContainerGrid/ContainerGridSettings";
 import {SwiperCom} from "./index";
+import {Button} from "../Button";
 
 const defaultProps = {
   paddingWidth: '3',

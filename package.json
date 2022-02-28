@@ -43,6 +43,7 @@
     "redux": "^4.1.2",
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.4.1",
+    "restful-react": "^15.9.4",
     "styled-components": "^4.4.1"
   },
   "devDependencies": {

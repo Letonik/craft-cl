@@ -9,7 +9,7 @@ import {makeStyles} from "@material-ui/core/styles";
 import styled from "styled-components";
 import Dropzone from "react-dropzone";
 import {tempsAPI} from "../../../api/api";
-
+import {useMutate} from 'restful-react';
 
 const Drop = styled.div`
   .dropzone {
@@ -79,18 +79,19 @@ const Btn = styled.div`
 `;
 
 
-function ModalCreater({open, handleClose}) {
+function ModalCreater({open, handleClose, onChange}) {
   const [file, setFile] = useState(undefined)
-  console.log(file)
   const classes = useStyles();
+  const { mutate: uploadImage } = useMutate({
+    verb: 'POST',
+    path: 'edit/add-image'
+  });
   const changeImage = async () => {
     let formData = new FormData();
-/*    formData.append('image', file[i]);*/
-    for(let i=0; i < file.length; i++){
-      formData.append('image', file[i]);
-    }
-    const response = await tempsAPI.saveImage(formData)
-    debugger
+    formData.append('image', file[0]);
+    const imageName = await uploadImage(formData)
+    onChange('http://localhost:5000/' + imageName)
+    handleClose()
   }
 
   return (
@@ -146,13 +147,8 @@ function ModalCreater({open, handleClose}) {
 export const ToolbarImage = ({ title, value, onChange }) => {
   const [open, setOpen] = React.useState(false);
 
-  const handleOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
+  const handleOpen = () => {setOpen(true);};
+  const handleClose = () => {setOpen(false);};
   return (
     <>
     <Button
@@ -165,7 +161,7 @@ export const ToolbarImage = ({ title, value, onChange }) => {
     >
       ИЗМЕНИТЬ ИЗОБРАЖЕНИЕ
     </Button>
-      <ModalCreater open={open} handleClose={handleClose}/>
+      <ModalCreater open={open} handleClose={handleClose} value={value} onChange={onChange}/>
       </>
 
 /*  <InputLabel>{title}</InputLabel>

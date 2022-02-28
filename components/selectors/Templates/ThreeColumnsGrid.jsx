@@ -28,21 +28,21 @@ export const ThreeColumnsGrid = (props) => {
         canvas id="imL2eft"
         gridArea='l'
         height='100%'
-        src='https://i11.fotocdn.net/s120/b3d8231f34e73a59/gallery_xl/2750306009.jpg'
+        src='http://localhost:5000/ver.jpg'
         is={Image}
       />
       <Element
         canvas id="im13in4"
         gridArea='c'
         height='100%'
-        src='https://i11.fotocdn.net/s120/b3d8231f34e73a59/gallery_xl/2750306009.jpg'
+        src='http://localhost:5000/ver.jpg'
         is={Image}
       />
       <Element
         canvas id="im23in4"
         gridArea='r'
         height='100%'
-        src='https://i11.fotocdn.net/s120/b3d8231f34e73a59/gallery_xl/2750306009.jpg'
+        src='http://localhost:5000/ver.jpg'
         is={Image}
       />
     </ContainerGrid>

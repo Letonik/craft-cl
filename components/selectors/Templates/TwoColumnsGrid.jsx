@@ -5,7 +5,7 @@ import { ContainerGrid } from '../ContainerGrid';
 import {ContainerGridSettings} from "../ContainerGrid/ContainerGridSettings";
 
 const defaultProps = {
-  paddingWidth: '3',
+  paddingWidth: '10',
   paddingHeight: '3',
   gap: '10'
 };
@@ -28,14 +28,14 @@ export const TwoColumnsGrid = (props) => {
         canvas id="imLesft"
         gridArea='l'
         height='100%'
-        src='https://i.pinimg.com/originals/aa/d8/ab/aad8abfb3729fa1982cf9e2731efe197.jpg'
+        src='http://localhost:5000/ver.jpg'
         is={Image}
       />
       <Element
         canvas id="im2sin4"
         gridArea='r'
         height='100%'
-        src='https://i.pinimg.com/originals/aa/d8/ab/aad8abfb3729fa1982cf9e2731efe197.jpg'
+        src='http://localhost:5000/ver.jpg'
         is={Image}
       />
     </ContainerGrid>

@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import AwesomeSlider from 'react-awesome-slider';
 import {SwiperSettings} from "./SwiperSettings";
 import { Carousel } from 'react-responsive-carousel';
+import {Image} from "../Image";
+import {ImageSlider} from "../Image/ImageSlider";
 
 const SwiperDiv = styled.div`
   position: relative;
@@ -19,13 +21,11 @@ const defaultProps = {
   gridArea: '',
   amountEl: [
     {
-      id: 1,
-      image: "https://alarmtrade.ru/wp-content/uploads/2017/02/10425.jpg"
+      image: "http://localhost:5000/hor.jpeg"
     },
-    {
-      id: 2,
-      image: "https://alarmtrade.ru/wp-content/uploads/2017/02/10425.jpg"
-    }
+   /* {
+      image: "http://localhost:5000/hor.jpeg"
+    }*/
   ],
   autoPlay: 'false'
 };
@@ -61,17 +61,21 @@ export const SwiperCom = (props) => {
         infiniteLoop={true}
         emulateTouch={true}
         autoPlay={(props.autoPlay === 'true') ? true : false}
-     /*   stopOnHover={true}*/
-     /*   swipeable={true}*/
+/*        stopOnHover={true}
+        swipeable={true}*/
       >
-        {props.amountEl.map(i =>
-          <div key={i.id}>
-            <img src={i.image} />
-          </div>
-        )}
-
+        <ImageSlider
+          gridArea='l'
+          height='100%'
+          src='http://localhost:5000/hor.jpeg'
+        />
+        <ImageSlider
+          gridArea='l'
+          height='100%'
+          src='http://localhost:5000/hor.jpeg'
+        />
       </Carousel>
-    </SwiperDiv>
+   </SwiperDiv>
   );
 };
 

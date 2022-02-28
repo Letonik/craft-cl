@@ -144,7 +144,7 @@ export const Header = () => {
     templates ? setTemplates( false) : setTemplates( true)
   }
   const saveCode = async () => {
-    console.log(query)
+    console.log(query.getState())
 /*    const json = query.serialize();
     const html = lz.encodeBase64(lz.compress(json));
     await tempsAPI.saveCode(code, id, html, media)*/

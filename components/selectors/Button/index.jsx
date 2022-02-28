@@ -71,6 +71,7 @@ export const Button = (props) => {
   }));
 
   const { text, textComponent, color, ...otherProps } = props;
+  console.log(textComponent)
   return (
     <StyledButton
       ref={connect}

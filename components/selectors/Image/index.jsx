@@ -18,7 +18,7 @@ const ImageDiv = styled.div`
 
 const defaultProps = {
   gridArea: '',
-  src: 'https://mobirise.com/bootstrap-carousel/assets2/images/thomas-smith-399133-1707x2560.jpg',
+  src: 'http://localhost:5000/ver.jpg',
   link: ''
 };
 

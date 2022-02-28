@@ -37,6 +37,8 @@ import {FourColumnsText} from "../../../components/selectors/Templates/FourColum
 import {SwiperCom} from "../../../components/selectors/Swiper";
 import {OneImage} from "../../../components/selectors/ImageComponent";
 import {OneSwiper} from "../../../components/selectors/Swiper/SwiperComponent";
+import {ImageSlider} from "../../../components/selectors/Image/ImageSlider";
+import {TextSlider} from "../../../components/selectors/Text/TextSlider";
 
 const theme = createMuiTheme({
   typography: {
@@ -96,7 +98,9 @@ function EditorPage() {
                 FourColumnsText,
                 SwiperCom,
                 OneImage,
-                OneSwiper
+                OneSwiper,
+                ImageSlider,
+                TextSlider
               }}
               enabled={false}
               onRender={RenderNode}
