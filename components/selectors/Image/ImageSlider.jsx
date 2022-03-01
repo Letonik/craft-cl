@@ -23,15 +23,27 @@ const ImageDiv = styled.div`
     top: 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: ${({ justifyContent }) =>
+  `${justifyContent}`};
+    align-items: ${({ alignItems }) =>
+  `${alignItems}`};
   }
 `;
 
 const defaultProps = {
   gridArea: '',
   src: 'http://localhost:5000/ver.jpg',
-  link: ''
+  link: '',
+  colorText: { r: 0, g: 0, b: 0, a: 1 },
+  buttonStyle: 'outline',
+  colorButton: { r: 255, g: 255, b: 255, a: 1 },
+  colorButtonHover: { r: 179, g: 179, b: 179, a: 1 },
+  backgroundButton: { r: 255, g: 255, b: 255, a: 1 },
+  backgroundButtonHover: { r: 179, g: 179, b: 179, a: 1 },
+  textButton: 'Button',
+  text: 'Some Text',
+  justifyContent: 'center',
+  alignItems: 'center',
 };
 
 export const ImageSlider = (props) => {
@@ -62,16 +74,17 @@ export const ImageSlider = (props) => {
         />
         <div className='upper'>
           <div className='textSl'>
-            <TextSlider color={{ r: 0, g: 0, b: 0, a: 1 }}  text='Some Text'/>
+            <TextSlider color={props.colorText}  text={props.text}/>
           </div>
           <div className='buttonSl'>
             <Button
-              buttonStyle="outline"
-              color={{ r: 255, g: 255, b: 255, a: 1 }}
-              colorHover={{ r: 179, g: 179, b: 179, a: 1 }}
-              background={{ r: 255, g: 255, b: 255, a: 1 }}
-              backgroundHover={{ r: 179, g: 179, b: 179, a: 1 }}
+              buttonStyle={props.buttonStyle}
+              color={props.colorButton}
+              colorHover={props.colorButtonHover}
+              background={props.backgroundButton}
+              backgroundHover={props.backgroundButtonHover}
               textTransform='uppercase'
+              text={props.textButton}
             />
           </div>
         </div>

@@ -6,9 +6,43 @@ import React from 'react';
 import { ToolbarDropdown } from './ToolbarDropdown';
 import { ToolbarTextInput } from './ToolbarTextInput';
 import {ToolbarImage} from "./ToolbarImage";
+import {ToolbarSlides} from "./ToolbarSlides";
 
 const iOSBoxShadow =
   '0 3px 1px rgba(0,0,0,0.1),0 4px 8px rgba(0,0,0,0.13),0 0 0 1px rgba(0,0,0,0.02)';
+
+const sliders = [
+  {
+    id: 1,
+    src: 'http://localhost:5000/hor.jpeg',
+    link: '',
+    colorText: { r: 0, g: 0, b: 0, a: 1 },
+    colorButton: { r: 255, g: 255, b: 255, a: 1 },
+    buttonStyle: 'outline',
+    colorButtonHover: { r: 179, g: 179, b: 179, a: 1 },
+    backgroundButton: { r: 255, g: 255, b: 255, a: 1 },
+    backgroundButtonHover: { r: 179, g: 179, b: 179, a: 1 },
+    textButton: 'Button',
+    text: 'Some Text 1',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  {
+    id: 2,
+    src: 'http://localhost:5000/hor.jpeg',
+    link: '',
+    colorText: { r: 0, g: 0, b: 0, a: 1 },
+    colorButton: { r: 255, g: 255, b: 255, a: 1 },
+    buttonStyle: 'outline',
+    colorButtonHover: { r: 179, g: 179, b: 179, a: 1 },
+    backgroundButton: { r: 255, g: 255, b: 255, a: 1 },
+    backgroundButtonHover: { r: 179, g: 179, b: 179, a: 1 },
+    textButton: 'Button',
+    text: 'Some Text 2',
+    justifyContent: 'center',
+    alignItems: 'center',
+  }
+]
 
 const SliderStyled = withStyles({
   root: {
@@ -157,7 +191,18 @@ export const ToolbarItem = ({
             }
             {...props}
           />
-        ) :  null}
+        ) : type === 'slides' ? (
+          <ToolbarSlides
+            value={value || sliders}
+            onChange={(value) =>
+              setProp(
+                (props) =>
+                  (props[propKey] = onChange ? onChange(value) : value)
+              )
+            }
+            {...props}
+          />
+        ) : null}
       </div>
     </Grid>
   );

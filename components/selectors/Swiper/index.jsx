@@ -6,6 +6,8 @@ import {SwiperSettings} from "./SwiperSettings";
 import { Carousel } from 'react-responsive-carousel';
 import {Image} from "../Image";
 import {ImageSlider} from "../Image/ImageSlider";
+import {Button} from "../Button";
+import {TextSlider} from "../Text/TextSlider";
 
 const SwiperDiv = styled.div`
   position: relative;
@@ -19,13 +21,37 @@ const SwiperDiv = styled.div`
 
 const defaultProps = {
   gridArea: '',
-  amountEl: [
+  sliders: [
     {
-      image: "http://localhost:5000/hor.jpeg"
+      id: 1,
+      src: 'http://localhost:5000/hor.jpeg',
+      link: '',
+      colorText: { r: 0, g: 0, b: 0, a: 1 },
+      colorButton: { r: 255, g: 255, b: 255, a: 1 },
+      buttonStyle: 'outline',
+      colorButtonHover: { r: 179, g: 179, b: 179, a: 1 },
+      backgroundButton: { r: 255, g: 255, b: 255, a: 1 },
+      backgroundButtonHover: { r: 179, g: 179, b: 179, a: 1 },
+      textButton: 'Button',
+      text: 'Some Text 1',
+      justifyContent: 'center',
+      alignItems: 'center',
     },
-   /* {
-      image: "http://localhost:5000/hor.jpeg"
-    }*/
+    {
+      id: 2,
+      src: 'http://localhost:5000/hor.jpeg',
+      link: '',
+      colorText: { r: 0, g: 0, b: 0, a: 1 },
+      colorButton: { r: 255, g: 255, b: 255, a: 1 },
+      buttonStyle: 'outline',
+      colorButtonHover: { r: 179, g: 179, b: 179, a: 1 },
+      backgroundButton: { r: 255, g: 255, b: 255, a: 1 },
+      backgroundButtonHover: { r: 179, g: 179, b: 179, a: 1 },
+      textButton: 'Button',
+      text: 'Some Text 2',
+      justifyContent: 'center',
+      alignItems: 'center',
+    }
   ],
   autoPlay: 'false'
 };
@@ -42,13 +68,6 @@ export const SwiperCom = (props) => {
     selected: node.events.selected,
   }));
 
-  const { src, link } = props;
-
-  const clickLink = (e) => {
-    if (!link) {
-      e.preventDefault()
-    }
-  }
 
 
   return (
@@ -64,16 +83,21 @@ export const SwiperCom = (props) => {
 /*        stopOnHover={true}
         swipeable={true}*/
       >
-        <ImageSlider
-          gridArea='l'
-          height='100%'
-          src='http://localhost:5000/hor.jpeg'
-        />
-        <ImageSlider
-          gridArea='l'
-          height='100%'
-          src='http://localhost:5000/hor.jpeg'
-        />
+        {props.sliders.map(i =>
+          <ImageSlider
+            buttonStyle={i.buttonStyle}
+            colorButton={i.colorButton}
+            colorButtonHover={i.colorButtonHover}
+            backgroundButton={i.backgroundButton}
+            backgroundButtonHover={i.backgroundButtonHover}
+            textButton={i.textButton}
+            colorText={i.colorText}
+            text={i.text}
+            src={i.src}
+            justifyContent={i.justifyContent}
+            alignItems={i.alignItems}
+          />
+        )}
       </Carousel>
    </SwiperDiv>
   );
