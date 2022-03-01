@@ -1,7 +1,9 @@
-import { TextField, makeStyles, InputAdornment } from '@material-ui/core';
 import React, { useEffect } from 'react';
 import { useState } from 'react';
 import { ChromePicker } from 'react-color';
+import {makeStyles} from "@mui/styles";
+import TextField from "@mui/material/TextField";
+import InputAdornment from "@mui/material/InputAdornment";
 
 const useStyles = makeStyles({
   root: {

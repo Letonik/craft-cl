@@ -8,10 +8,10 @@ import {
 } from "react-pro-sidebar";
 import "react-pro-sidebar/dist/css/styles.css";
 import Link from "next/link";
-import EditIcon  from '@material-ui/icons/Edit';
-import  HomeIcon from '@material-ui/icons/Home';
-import  Settings from '@material-ui/icons/Settings';
-import  MenuIcon from '@material-ui/icons/Menu';
+import EditIcon  from '@mui/icons-material/Edit';
+import  HomeIcon from '@mui/icons-material/Home';
+import  Settings from '@mui/icons-material/Settings';
+import  MenuIcon from '@mui/icons-material/Menu';
 import {useRouter} from "next/router";
 
 const SideNav = () => {

@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from "styled-components";
-import Fab from '@material-ui/core/Fab';
-import CheckIcon from '@material-ui/icons/Check';
-import DeleteIcon from '@material-ui/icons/Delete';
-import EditIcon from '@material-ui/icons/Edit';
+import CheckIcon from '@mui/icons-material/Check';
+import DeleteIcon from '@mui/icons-material/Delete';
+import EditIcon from '@mui/icons-material/Edit';
 import {useRouter} from "next/router";
 import ModalSetActive from "./ModalSetActive";
+import Fab from "@mui/material/Fab";
 
 const Templates = styled.div`
     margin: 90px auto;

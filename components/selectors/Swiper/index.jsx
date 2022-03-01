@@ -1,62 +1,46 @@
 import {useNode, useEditor, Element} from '@craftjs/core';
-import React from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import styled from 'styled-components';
-import AwesomeSlider from 'react-awesome-slider';
 import {SwiperSettings} from "./SwiperSettings";
-import { Carousel } from 'react-responsive-carousel';
 import {Image} from "../Image";
-import {ImageSlider} from "../Image/ImageSlider";
-import {Button} from "../Button";
-import {TextSlider} from "../Text/TextSlider";
+import Carousel from 'react-material-ui-carousel'
+import { Paper, Button } from '@mui/material'
 
 const SwiperDiv = styled.div`
   position: relative;
   width: 100%;
-  img {
-    width: 100%;
-    height: ${({ height }) =>
-  `${height}`};
-  }
 `;
 
 const defaultProps = {
   gridArea: '',
-  sliders: [
-    {
-      id: 1,
-      src: 'http://localhost:5000/hor.jpeg',
-      link: '',
-      colorText: { r: 0, g: 0, b: 0, a: 1 },
-      colorButton: { r: 255, g: 255, b: 255, a: 1 },
-      buttonStyle: 'outline',
-      colorButtonHover: { r: 179, g: 179, b: 179, a: 1 },
-      backgroundButton: { r: 255, g: 255, b: 255, a: 1 },
-      backgroundButtonHover: { r: 179, g: 179, b: 179, a: 1 },
-      textButton: 'Button',
-      text: 'Some Text 1',
-      justifyContent: 'center',
-      alignItems: 'center',
-    },
-    {
-      id: 2,
-      src: 'http://localhost:5000/hor.jpeg',
-      link: '',
-      colorText: { r: 0, g: 0, b: 0, a: 1 },
-      colorButton: { r: 255, g: 255, b: 255, a: 1 },
-      buttonStyle: 'outline',
-      colorButtonHover: { r: 179, g: 179, b: 179, a: 1 },
-      backgroundButton: { r: 255, g: 255, b: 255, a: 1 },
-      backgroundButtonHover: { r: 179, g: 179, b: 179, a: 1 },
-      textButton: 'Button',
-      text: 'Some Text 2',
-      justifyContent: 'center',
-      alignItems: 'center',
-    }
-  ],
   autoPlay: 'false'
 };
-
-
+function Item({i})
+{
+  const [height, setHeight] = useState('844.3125px')
+  const [width, setWidth] = useState(0);
+  useEffect(() => {
+    if (document.getElementById('myPaper') !== null) {
+      setWidth(document.getElementById('myPaper').offsetWidth)
+    }
+  }, [document.getElementById('myPaper'), height])
+  useEffect(() => {
+    let newHeight = width * 9 / 16
+    setHeight(newHeight + 'px')
+  }, [width])
+  console.log(height)
+  return (
+    <Paper style={{height: height}} id='myPaper'>
+      <Element
+        key={i}
+        canvas
+        id={'a' + i}
+        height={height}
+        src='http://localhost:5000/hor.jpeg'
+        is={Image} />
+    </Paper>
+  )
+}
 export const SwiperCom = (props) => {
   props = {
     ...defaultProps,
@@ -68,38 +52,22 @@ export const SwiperCom = (props) => {
     selected: node.events.selected,
   }));
 
-
+  var items = [1, 2]
 
   return (
-    <SwiperDiv ref={connect} {...props}>
+/*    <SwiperDiv>*/
       <Carousel
-        showArrows={false}
-        showStatus={false}
-        showIndicators={false}
-        showThumbs={false}
-        infiniteLoop={true}
-        emulateTouch={true}
-        autoPlay={(props.autoPlay === 'true') ? true : false}
-/*        stopOnHover={true}
-        swipeable={true}*/
+        style={{overflow: 'none', height: '100%'}}
+        ref={connect} {...props}
+/*        autoPlay={false}*/
+/*        indicators={false}*/
+
       >
-        {props.sliders.map(i =>
-          <ImageSlider
-            buttonStyle={i.buttonStyle}
-            colorButton={i.colorButton}
-            colorButtonHover={i.colorButtonHover}
-            backgroundButton={i.backgroundButton}
-            backgroundButtonHover={i.backgroundButtonHover}
-            textButton={i.textButton}
-            colorText={i.colorText}
-            text={i.text}
-            src={i.src}
-            justifyContent={i.justifyContent}
-            alignItems={i.alignItems}
-          />
-        )}
+        {
+          items.map( (item) => <Item key={item} i={item} /> )
+        }
       </Carousel>
-   </SwiperDiv>
+/*   </SwiperDiv>*/
   );
 };
 

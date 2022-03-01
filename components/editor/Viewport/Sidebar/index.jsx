@@ -2,15 +2,14 @@ import { useEditor } from '@craftjs/core';
 import { Layers } from '@craftjs/layers';
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { makeStyles } from '@material-ui/core/styles';
-import Accordion from '@material-ui/core/Accordion';
-import AccordionDetails from '@material-ui/core/AccordionDetails';
-import AccordionSummary from '@material-ui/core/AccordionSummary';
-import Typography from '@material-ui/core/Typography';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { Toolbar } from '../../Toolbar';
 import { MyComponents } from "../../MyComponents";
+import {makeStyles} from "@mui/styles";
+import Accordion from "@mui/material/Accordion";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import Typography from "@mui/material/Typography";
+import AccordionDetails from "@mui/material/AccordionDetails";
 
 export const SidebarDiv = styled.div`
   width: 280px;

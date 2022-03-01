@@ -1,5 +1,9 @@
 import {useEditor} from '@craftjs/core';
-import { Tooltip } from '@material-ui/core';
+import DesktopMacIcon from '@mui/icons-material/DesktopMac';
+import TabletMacIcon from '@mui/icons-material/TabletMac';
+import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
+import SaveIcon from '@mui/icons-material/Save';
+import ArrowDropDownCircleIcon from '@mui/icons-material/ArrowDropDownCircle';
 import cx from 'classnames';
 import React, {useState} from 'react';
 import styled from 'styled-components';
@@ -8,11 +12,6 @@ import Checkmark from '../../../public/icons/check.svg';
 import Customize from '../../../public/icons/customize.svg';
 import RedoSvg from '../../../public/icons/toolbox/redo.svg';
 import UndoSvg from '../../../public/icons/toolbox/undo.svg';
-import DesktopMacIcon from '@material-ui/icons/DesktopMac';
-import TabletMacIcon from '@material-ui/icons/TabletMac';
-import PhoneIphoneIcon from '@material-ui/icons/PhoneIphone';
-import SaveIcon from '@material-ui/icons/Save';
-import ArrowDropDownCircleIcon from '@material-ui/icons/ArrowDropDownCircle';
 import {useDispatch, useSelector} from "react-redux";
 import {getMediaSelector} from "../../../store/selectors/selectors";
 import {changeMedia} from "../../../store/reducers/mediaReducer";
@@ -28,6 +27,7 @@ import {ThreeColumnsBottom} from "../../selectors/Templates/ThreeColumnsBottom";
 import {FourColumnsBottom} from "../../selectors/Templates/FourColumnsBottom";
 import {TwoColumnsText} from "../../selectors/Templates/TwoColumnsText";
 import {ThreeColumnsText} from "../../selectors/Templates/ThreeColumnsText";
+import Tooltip from "@mui/material/Tooltip";
 
 const HeaderDiv = styled.div`
   width: 100%;

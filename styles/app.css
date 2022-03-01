@@ -3,6 +3,7 @@
 @tailwind components;
 @import url('https://use.typekit.net/mpa1wkh.css');
 @import url('https://app3.lichishop.com/upload/fonts/fonts.css');
+
 html,
 body {
   font-family: 'Bodoni Cyrillic', 'Futura PT', 'acumin-pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',

@@ -1,6 +1,6 @@
 import {Editor, Frame, Element, useEditor} from '@craftjs/core';
-import { createMuiTheme } from '@material-ui/core';
-import { ThemeProvider } from '@material-ui/styles';
+/*import { createMuiTheme } from '@material-ui/core';
+import { ThemeProvider } from '@material-ui/styles';*/
 import React, {useEffect, useMemo} from 'react';
 
 import { Viewport, RenderNode } from '../../../components/editor';
@@ -39,8 +39,9 @@ import {OneImage} from "../../../components/selectors/ImageComponent";
 import {OneSwiper} from "../../../components/selectors/Swiper/SwiperComponent";
 import {ImageSlider} from "../../../components/selectors/Image/ImageSlider";
 import {TextSlider} from "../../../components/selectors/Text/TextSlider";
+import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
 
-const theme = createMuiTheme({
+const theme = createTheme({
   typography: {
     fontFamily: [
       'acumin-pro',

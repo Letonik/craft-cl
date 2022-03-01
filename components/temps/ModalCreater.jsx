@@ -1,14 +1,14 @@
 import React, {useRef, useState} from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Modal from '@material-ui/core/Modal';
-import Backdrop from '@material-ui/core/Backdrop';
-import Fade from '@material-ui/core/Fade';
-import TextField from "@material-ui/core/TextField";
-import Button from "@material-ui/core/Button";
 import styled from "styled-components";
 import { useDispatch } from 'react-redux'
 import {createTemp} from "../../store/reducers/locationReducer";
 import {useRouter} from "next/router";
+import {makeStyles} from "@mui/styles";
+import Modal from "@mui/material/Modal";
+import Fade from "@mui/material/Fade";
+import TextField from "@mui/material/TextField";
+import Backdrop from "@mui/material/Backdrop";
+import Button from "@mui/material/Button";
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -19,9 +19,9 @@ const useStyles = makeStyles((theme) => ({
     position: "relative"
   },
   paper: {
-    backgroundColor: theme.palette.background.paper,
+/*    backgroundColor: theme.palette.background.paper,
     boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 3),
+    padding: theme.spacing(2, 4, 3),*/
     borderRadius: '3px',
     position: "relative",
     left: '35px'

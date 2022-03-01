@@ -23,14 +23,14 @@ export const SwiperSettings = () => {
           <ToolbarRadio value={'false'} label="Нет" />
         </ToolbarItem>
       </ToolbarSection>
-      <ToolbarSection title="Путь и ссыsddsdfлка">
+    {/*  <ToolbarSection title="Путь и ссыsddsdfлка">
         <ToolbarItem
           full={true}
           propKey="sliders"
           type="slides"
           label="Путь к sasasю"
         />
-      </ToolbarSection>
+      </ToolbarSection>*/}
     </React.Fragment>
   );
 };

@@ -1,15 +1,15 @@
 import React, {useState} from 'react';
-import Button from "@material-ui/core/Button";
 import {useDispatch} from "react-redux";
 import {useRouter} from "next/router";
-import Modal from "@material-ui/core/Modal";
-import Backdrop from "@material-ui/core/Backdrop";
-import Fade from "@material-ui/core/Fade";
-import {makeStyles} from "@material-ui/core/styles";
 import styled from "styled-components";
 import Dropzone from "react-dropzone";
 import {tempsAPI} from "../../../api/api";
 import {useMutate} from 'restful-react';
+import {makeStyles} from "@mui/styles";
+import Modal from "@mui/material/Modal";
+import Fade from "@mui/material/Fade";
+import Button from "@mui/material/Button";
+import Backdrop from "@mui/material/Backdrop";
 
 const Drop = styled.div`
   .dropzone {
@@ -64,9 +64,9 @@ const useStyles = makeStyles((theme) => ({
     position: "relative"
   },
   paper: {
-    backgroundColor: theme.palette.background.paper,
+/*    backgroundColor: theme.palette.background.paper,
     boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 3),
+    padding: theme.spacing(2, 4, 3),*/
     borderRadius: '3px',
     position: "relative",
   },

@@ -19,7 +19,8 @@ const ImageDiv = styled.div`
 const defaultProps = {
   gridArea: '',
   src: 'http://localhost:5000/ver.jpg',
-  link: ''
+  link: '',
+  height: 'auto'
 };
 
 export const Image = (props) => {

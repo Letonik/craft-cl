@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from "styled-components";
-import Fab from '@material-ui/core/Fab';
-import AddIcon from '@material-ui/icons/Add';
+import AddIcon from '@mui/icons-material/Add';
 import ModalCreater from "./ModalCreater";
+import Fab from "@mui/material/Fab";
 
 const Creator = styled.div`
     margin: auto;

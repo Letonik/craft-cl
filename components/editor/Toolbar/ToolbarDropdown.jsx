@@ -1,5 +1,7 @@
-import { FormControl, InputLabel, Select } from '@material-ui/core';
 import React from 'react';
+import Select from "@mui/material/Select";
+import InputLabel from "@mui/material/InputLabel";
+import FormControl from "@mui/material/FormControl";
 
 export const ToolbarDropdown = ({ title, value, onChange, children }) => {
   return (

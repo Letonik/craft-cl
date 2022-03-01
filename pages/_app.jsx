@@ -3,7 +3,6 @@ import { wrapper } from '../store/store';
 import { RestfulProvider } from "restful-react";
 import '../styles/app.css';
 import '../styles/MainSidebar.css';
-import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const MyApp = ({ Component, pageProps }) => {
   return <Component {...pageProps} />

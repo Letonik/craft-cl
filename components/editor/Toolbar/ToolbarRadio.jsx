@@ -1,7 +1,8 @@
-import { FormControlLabel, Radio } from '@material-ui/core';
-import { makeStyles } from '@material-ui/styles';
 import classnames from 'classnames';
 import React from 'react';
+import {makeStyles} from "@mui/styles";
+import Radio from "@mui/material/Radio";
+import FormControlLabel from "@mui/material/FormControlLabel";
 
 const useStyles = makeStyles({
   icon: {

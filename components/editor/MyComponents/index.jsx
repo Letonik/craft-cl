@@ -1,5 +1,4 @@
 import {Element, useEditor} from '@craftjs/core';
-import {Tooltip} from '@material-ui/core';
 import React from 'react';
 import styled from 'styled-components';
 import ButtonSvg from '../../../public/icons/toolbox/button.svg';
@@ -16,6 +15,7 @@ import {Image} from "../../selectors/Image";
 import {SwiperCom} from "../../selectors/Swiper";
 import {OneImage} from "../../selectors/ImageComponent";
 import {OneSwiper} from "../../selectors/Swiper/SwiperComponent";
+import Tooltip from "@mui/material/Tooltip";
 
 
 const Subsection = styled.div`

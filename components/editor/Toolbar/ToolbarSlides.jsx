@@ -1,3 +1,4 @@
+/*
 import React from "react";
 import Button from "@material-ui/core/Button";
 import {ToolbarImage} from "./ToolbarImage";
@@ -52,11 +53,11 @@ export const ToolbarSlides = ({ title, value, onChange }) => {
         )
       }
 </>
-    /*  <InputLabel>{title}</InputLabel>
+    /!*  <InputLabel>{title}</InputLabel>
       <Select native value={value} onChange={(e) => onChange(e.target.value)}>
         {children}
-      </Select>*/
+      </Select>*!/
 
 
   );
-};
+};*/

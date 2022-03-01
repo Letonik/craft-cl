@@ -1,13 +1,12 @@
 import { useNode } from '@craftjs/core';
-import {
-  ExpansionPanel,
-  ExpansionPanelDetails,
-  ExpansionPanelSummary,
-  Grid,
-  Divider,
-} from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
 import React from 'react';
+import {makeStyles} from "@mui/styles";
+import Grid from "@mui/material/Grid";
+import Divider from "@mui/material/Divider";
+import AccordionDetails from '@mui/material/AccordionDetails';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import Accordion from '@mui/material/Accordion';
+
 const usePanelStyles = makeStyles((_) => ({
   root: {
     background: 'transparent',
@@ -50,8 +49,8 @@ export const ToolbarSection = ({ title, props, summary, children }) => {
       }, {}),
   }));
   return (
-    <ExpansionPanel classes={panelClasses}>
-      <ExpansionPanelSummary classes={summaryClasses}>
+    <Accordion classes={panelClasses}>
+      <AccordionSummary classes={summaryClasses}>
         <div className="px-6 w-full">
           <Grid container direction="row" alignItems="center" spacing={3}>
             <Grid item xs={4}>
@@ -73,13 +72,13 @@ export const ToolbarSection = ({ title, props, summary, children }) => {
             ) : null}
           </Grid>
         </div>
-      </ExpansionPanelSummary>
-      <ExpansionPanelDetails style={{ padding: '0px 24px 20px' }}>
+      </AccordionSummary>
+      <AccordionDetails style={{ padding: '0px 24px 20px' }}>
         <Divider />
         <Grid container spacing={1}>
           {children}
         </Grid>
-      </ExpansionPanelDetails>
-    </ExpansionPanel>
+      </AccordionDetails>
+    </Accordion>
   );
 };

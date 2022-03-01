@@ -1,12 +1,12 @@
 import { useNode } from '@craftjs/core';
-import { Grid, Slider, RadioGroup } from '@material-ui/core';
-import { withStyles } from '@material-ui/styles';
 import React from 'react';
-
 import { ToolbarDropdown } from './ToolbarDropdown';
 import { ToolbarTextInput } from './ToolbarTextInput';
 import {ToolbarImage} from "./ToolbarImage";
-import {ToolbarSlides} from "./ToolbarSlides";
+import {withStyles} from "@mui/styles";
+import Grid from "@mui/material/Grid";
+import RadioGroup from "@mui/material/RadioGroup";
+import Slider from "@mui/material/Slider";
 
 const iOSBoxShadow =
   '0 3px 1px rgba(0,0,0,0.1),0 4px 8px rgba(0,0,0,0.13),0 0 0 1px rgba(0,0,0,0.02)';
@@ -191,7 +191,7 @@ export const ToolbarItem = ({
             }
             {...props}
           />
-        ) : type === 'slides' ? (
+        ) /*: type === 'slides' ? (
           <ToolbarSlides
             value={value || sliders}
             onChange={(value) =>
@@ -202,7 +202,7 @@ export const ToolbarItem = ({
             }
             {...props}
           />
-        ) : null}
+        ) */: null}
       </div>
     </Grid>
   );
