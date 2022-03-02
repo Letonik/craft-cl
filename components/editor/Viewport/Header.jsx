@@ -64,7 +64,7 @@ const Templates = styled.div`
        margin: 0 10px;
      }
      &::-webkit-scrollbar {
-       height: 3px;
+       height: 6px;
        background-color: #5a5a5a;
      }
      &::-webkit-scrollbar-thumb {
