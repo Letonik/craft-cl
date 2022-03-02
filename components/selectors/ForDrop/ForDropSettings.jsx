@@ -21,6 +21,14 @@ export const ForDropSettings = () => {
           <ToolbarRadio value="flex-end" label="Право" />
         </ToolbarItem>
       </ToolbarSection>
+      <ToolbarSection title="Путь и ссылка">
+        <ToolbarItem
+          full={true}
+          propKey="src"
+          type="images"
+          label="Путь к изображению"
+        />
+      </ToolbarSection>
     </React.Fragment>
   );
 };

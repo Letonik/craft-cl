@@ -3,34 +3,26 @@ import styled from "styled-components";
 import { useDispatch } from 'react-redux'
 import {createTemp} from "../../store/reducers/locationReducer";
 import {useRouter} from "next/router";
-import {makeStyles} from "@mui/styles";
 import Modal from "@mui/material/Modal";
-import Fade from "@mui/material/Fade";
 import TextField from "@mui/material/TextField";
-import Backdrop from "@mui/material/Backdrop";
 import Button from "@mui/material/Button";
+import Box from "@mui/material/Box";
 
-const useStyles = makeStyles((theme) => ({
-  modal: {
-    display: 'flex',
-    marginTop: '13vh',
-    height: '170px',
-    justifyContent: 'center',
-    position: "relative"
-  },
-  paper: {
-/*    backgroundColor: theme.palette.background.paper,
-    boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 3),*/
-    borderRadius: '3px',
-    position: "relative",
-    left: '35px'
-  },
-}));
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 500,
+  bgcolor: 'background.paper',
+  boxShadow: 24,
+  p: 4,
+};
+
 
 const Text = styled.div`
     #outlined-basic {
-      width: 350px;
+      width: 410px;
     }
 `;
 const Btn = styled.div`
@@ -41,7 +33,7 @@ const Btn = styled.div`
 
 
 export default function ModalCreater({open, handleClose}) {
-  const classes = useStyles();
+/*  const classes = useStyles();*/
   const dispatch = useDispatch();
   const [name, setName] = useState('');
   const router = useRouter()
@@ -53,20 +45,15 @@ export default function ModalCreater({open, handleClose}) {
   return (
     <div>
       <Modal
-        aria-labelledby="transition-modal-title"
-        aria-describedby="transition-modal-description"
-        className={classes.modal}
         open={open}
         onClose={handleClose}
         closeAfterTransition
-        BackdropComponent={Backdrop}
         BackdropProps={{
           timeout: 500,
         }}
       >
-        <Fade in={open}>
-          <div className={classes.paper}>
-            <form className={classes.root} noValidate autoComplete="off">
+        <Box sx={style}>
+            <form noValidate autoComplete="off">
               <Text>
                 <TextField
                   id="outlined-basic"
@@ -86,8 +73,7 @@ export default function ModalCreater({open, handleClose}) {
                 </Button>
               </Btn>
             </form>
-          </div>
-        </Fade>
+        </Box>
       </Modal>
     </div>
   );

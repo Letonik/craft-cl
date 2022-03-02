@@ -9,6 +9,7 @@ const ImageDiv = styled.div`
   grid-area:${({ gridArea }) =>
   `${gridArea}`};
   width: 100%;
+  overflow: hidden;
   img {
     width: 100%;
     height: ${({ height }) =>
@@ -49,7 +50,7 @@ export const Image = (props) => {
         <img
           src={src}
         />
-        <Element canvas is={ForDrop} id="wow33" />
+        <Element canvas is={ForDrop} id="wow33" src={src}/>
       </a>
     </ImageDiv>
   );

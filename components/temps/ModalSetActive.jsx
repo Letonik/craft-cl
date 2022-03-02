@@ -8,27 +8,23 @@ import styled from "styled-components";
 import { useDispatch } from 'react-redux'
 import { setActive} from "../../store/reducers/locationReducer";
 import {useRouter} from "next/router";
+import Box from "@mui/material/Box";
 
-const useStyles = makeStyles((theme) => ({
-    modal: {
-        display: 'flex',
-        marginTop: '13vh',
-        height: '150px',
-        justifyContent: 'center',
-        position: "relative"
-    },
-    paper: {
-/*        backgroundColor: theme.palette.background.paper,
-        boxShadow: theme.shadows[5],
-        padding: theme.spacing(2, 4, 3),*/
-        borderRadius: '3px',
-        position: "relative",
-        left: '35px'
-    },
-}));
+const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 500,
+    bgcolor: 'background.paper',
+    boxShadow: 24,
+    p: 4,
+};
+
+
 
 const Text = styled.div`
-      width: 350px;
+      width: 410px;
       text-align: center;
       color: gray;
       font-size: 20px;
@@ -41,7 +37,6 @@ const Btn = styled.div`
 
 
 export default function ModalSetActive({open, handleClose, id}) {
-    const classes = useStyles();
     const dispatch = useDispatch();
     const router = useRouter()
     const {id: code} = router.query
@@ -52,20 +47,15 @@ export default function ModalSetActive({open, handleClose, id}) {
     return (
         <div>
             <Modal
-                aria-labelledby="transition-modal-title"
-                aria-describedby="transition-modal-description"
-                className={classes.modal}
-                open={open}
-                onClose={handleClose}
-                closeAfterTransition
-                BackdropComponent={Backdrop}
-                BackdropProps={{
-                    timeout: 500,
-                }}
+              open={open}
+              onClose={handleClose}
+              closeAfterTransition
+              BackdropProps={{
+                  timeout: 500,
+              }}
             >
-                <Fade in={open}>
-                    <div className={classes.paper}>
-                        <form className={classes.root} noValidate autoComplete="off">
+                <Box sx={style}>
+                    <form noValidate autoComplete="off">
                             <Text>
                                 Вы уверены?
                             </Text>
@@ -86,9 +76,8 @@ export default function ModalSetActive({open, handleClose, id}) {
                                     ЕЩЕ ПОДУМАЮ
                                 </Button>
                             </Btn>
-                        </form>
-                    </div>
-                </Fade>
+                    </form>
+                </Box>
             </Modal>
         </div>
     );

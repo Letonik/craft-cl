@@ -1,15 +1,10 @@
 import React, {useState} from 'react';
-import {useDispatch} from "react-redux";
-import {useRouter} from "next/router";
 import styled from "styled-components";
 import Dropzone from "react-dropzone";
-import {tempsAPI} from "../../../api/api";
 import {useMutate} from 'restful-react';
-import {makeStyles} from "@mui/styles";
 import Modal from "@mui/material/Modal";
-import Fade from "@mui/material/Fade";
 import Button from "@mui/material/Button";
-import Backdrop from "@mui/material/Backdrop";
+import Box from "@mui/material/Box";
 
 const Drop = styled.div`
   .dropzone {
@@ -55,22 +50,16 @@ function DropImage({setFile}) {
   );
 }
 
-const useStyles = makeStyles((theme) => ({
-  modal: {
-    display: 'flex',
-    marginTop: '13vh',
-    height: '370px',
-    justifyContent: 'center',
-    position: "relative"
-  },
-  paper: {
-/*    backgroundColor: theme.palette.background.paper,
-    boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 3),*/
-    borderRadius: '3px',
-    position: "relative",
-  },
-}));
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 480,
+  bgcolor: 'background.paper',
+  boxShadow: 24,
+  p: 5,
+};
 
 const Btn = styled.div`
     display: flex;
@@ -81,7 +70,6 @@ const Btn = styled.div`
 
 function ModalCreater({open, handleClose, onChange}) {
   const [file, setFile] = useState(undefined)
-  const classes = useStyles();
   const { mutate: uploadImage } = useMutate({
     verb: 'POST',
     path: 'edit/add-image'
@@ -97,20 +85,15 @@ function ModalCreater({open, handleClose, onChange}) {
   return (
     <div>
       <Modal
-        aria-labelledby="transition-modal-title"
-        aria-describedby="transition-modal-description"
-        className={classes.modal}
         open={open}
         onClose={handleClose}
         closeAfterTransition
-        BackdropComponent={Backdrop}
         BackdropProps={{
           timeout: 500,
         }}
       >
-        <Fade in={open}>
-          <div className={classes.paper}>
-            <form className={classes.root} noValidate autoComplete="off">
+        <Box sx={style}>
+          <form noValidate autoComplete="off">
               <DropImage setFile={setFile}/>
               <Btn>
                 <Button
@@ -135,9 +118,8 @@ function ModalCreater({open, handleClose, onChange}) {
                   ОТМЕНИТЬ
                 </Button>
               </Btn>
-            </form>
-          </div>
-        </Fade>
+          </form>
+        </Box>
       </Modal>
     </div>
   );

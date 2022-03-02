@@ -30,7 +30,7 @@ function Item({i})
   }, [width])
   console.log(height)
   return (
-    <Paper style={{height: height}} id='myPaper'>
+    <Paper  id='myPaper'>
       <Element
         key={i}
         canvas
