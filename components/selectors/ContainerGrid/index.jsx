@@ -19,7 +19,7 @@ const Grid = styled.div`
   margin: ${({ margin }) =>
   `${margin[0]}% ${margin[1]}% ${margin[2]}% ${margin[3]}%`};
   padding: ${({ padding }) =>
-  `${padding[0]}% ${padding[1]}% ${padding[2]}% ${padding[3]}%`};
+  `${padding[0]}px ${padding[1]}px ${padding[2]}px ${padding[3]}px`};
   width: 100%;  
   grid-template-areas: ${( props ) =>
     `${props.areasUp} ${props.areasDown}`};

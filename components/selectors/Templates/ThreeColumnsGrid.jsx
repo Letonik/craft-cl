@@ -5,9 +5,9 @@ import { ContainerGrid } from '../ContainerGrid';
 import {ContainerGridSettings} from "../ContainerGrid/ContainerGridSettings";
 
 const defaultProps = {
-  paddingWidth: '3',
-  paddingHeight: '3',
-  gap: '10'
+  paddingWidth: '0',
+  paddingHeight: '1',
+  gap: '2'
 };
 
 export const ThreeColumnsGrid = (props) => {
