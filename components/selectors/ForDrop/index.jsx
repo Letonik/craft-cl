@@ -32,6 +32,7 @@ const Wrapper = styled.div`
       `url(${src})`};
       background-size: cover;
       background-position: center;
+   
     }
     .enter {
       animation: ${scaleAnimation} 0.5s forwards;
