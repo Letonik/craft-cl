@@ -28,7 +28,7 @@ import {FourColumnsBottom} from "../../selectors/Templates/FourColumnsBottom";
 import {TwoColumnsText} from "../../selectors/Templates/TwoColumnsText";
 import {ThreeColumnsText} from "../../selectors/Templates/ThreeColumnsText";
 import Tooltip from "@mui/material/Tooltip";
-import {ImageWidhtAnimateText} from "../../selectors/ImageWidhtAnimateText";
+import {ImageWidhtAnimateText} from "../../selectors/Image/ImageWidhtAnimateText";
 import {ColumnsGrid2x1} from "../../selectors/Templates/ColumnsGrid2x1";
 import {ColumnsGrid1x1x1} from "../../selectors/Templates/ColumnsGrid1x1x1";
 
@@ -253,9 +253,9 @@ export const Header = () => {
                 create(ref, <ColumnsGrid2x1/>)
               }
             >
-              <Tooltip title="2col" placement="right">
+              <Tooltip title="1K2" placement="right">
                 <div className="cursor-pointer block" move style={{width: '150px'}}>
-                  <img src="/1x1x1.png" alt="" style={{width: '150px'}}/>
+                  <img src="/1k2.png" alt="" style={{width: '150px'}}/>
                 </div>
               </Tooltip>
             </div>
@@ -264,9 +264,9 @@ export const Header = () => {
                 create(ref, <ColumnsGrid1x1x1/>)
               }
             >
-              <Tooltip title="2col" placement="right">
+              <Tooltip title="1x1x1" placement="right">
                 <div className="cursor-pointer block" move style={{width: '150px'}}>
-                  <img src="/1k2.png" alt="" style={{width: '150px'}}/>
+                  <img src="/1x1x1.png" alt="" style={{width: '150px'}}/>
                 </div>
               </Tooltip>
             </div>

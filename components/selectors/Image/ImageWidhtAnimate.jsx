@@ -1,9 +1,7 @@
-import {useNode, useEditor, Element} from '@craftjs/core';
+import {useNode} from '@craftjs/core';
 import React from 'react';
 import styled from 'styled-components';
-import { ImageSettings } from '../Image/ImageSetting';
-import {ForDrop} from "../ForDrop";
-import {ForDropWidthAnimateText} from "../ForDrop/ForDropWidthAnimateText";
+import { ImageSettings } from './ImageSetting';
 
 const ImageDiv = styled.div`
   position: relative;
@@ -13,8 +11,12 @@ const ImageDiv = styled.div`
   overflow: hidden;
   img {
     width: 100%;
+    transition: 0.5s;
     height: ${({ height }) =>
   `${height}`};
+    &:hover {
+     transform: scale(1.2);
+    }  
   }
 `;
 
@@ -25,7 +27,7 @@ const defaultProps = {
   height: 'auto'
 };
 
-export const ImageWidhtAnimateText = (props) => {
+export const ImageWidhtAnimate = (props) => {
   props = {
     ...defaultProps,
     ...props,
@@ -51,13 +53,12 @@ export const ImageWidhtAnimateText = (props) => {
         <img
           src={src}
         />
-        <Element canvas is={ForDropWidthAnimateText} id="wow33" src={src}/>
       </a>
     </ImageDiv>
   );
 };
 
-ImageWidhtAnimateText.craft = {
+ImageWidhtAnimate.craft = {
   displayName: 'Image',
   props: defaultProps,
   related: {

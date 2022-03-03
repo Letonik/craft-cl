@@ -3,7 +3,7 @@ import React from 'react';
 import {Image} from '../Image';
 import { ContainerGrid } from '../ContainerGrid';
 import {ContainerGridSettings} from "../ContainerGrid/ContainerGridSettings";
-import {ImageWidhtAnimateText} from "../ImageWidhtAnimateText";
+import {ImageWidhtAnimateText} from "../Image/ImageWidhtAnimateText";
 
 const defaultProps = {
   paddingWidth: '0',

@@ -18,7 +18,8 @@ import {useSelector} from "react-redux";
 import {getLocationSelector, getMediaSelector} from "../../../store/selectors/selectors";
 import {AppContainer} from "../../../components/selectors/AppContainer";
 import {Image} from "../../../components/selectors/Image";
-import {ImageWidhtAnimateText} from "../../../components/selectors/ImageWidhtAnimateText";
+import {ImageWidhtAnimateText} from "../../../components/selectors/Image/ImageWidhtAnimateText";
+import {ImageWidhtAnimate} from "../../../components/selectors/Image/ImageWidhtAnimate";
 import {ContainerGrid} from "../../../components/selectors/ContainerGrid";
 import {OneAndFourGrid} from "../../../components/selectors/Templates/OneAndFourGrid";
 import {ForDrop} from "../../../components/selectors/ForDrop";
@@ -41,7 +42,7 @@ import {OneSwiper} from "../../../components/selectors/Swiper/SwiperComponent";
 import {ImageSlider} from "../../../components/selectors/Image/ImageSlider";
 import {TextSlider} from "../../../components/selectors/Text/TextSlider";
 import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
-import {ForDropWidthAnimateText} from "../../../components/selectors/ForDrop/ForDropWidthAnimateText";
+
 import {ColumnsGrid2x1} from "../../../components/selectors/Templates/ColumnsGrid2x1";
 import {ColumnsGrid1x1x1} from "../../../components/selectors/Templates/ColumnsGrid1x1x1";
 
@@ -106,10 +107,10 @@ function EditorPage() {
                 OneSwiper,
                 ImageSlider,
                 TextSlider,
-                ForDropWidthAnimateText,
                 ImageWidhtAnimateText,
                 ColumnsGrid2x1,
-                ColumnsGrid1x1x1
+                ColumnsGrid1x1x1,
+                ImageWidhtAnimate
               }}
               enabled={false}
               onRender={RenderNode}

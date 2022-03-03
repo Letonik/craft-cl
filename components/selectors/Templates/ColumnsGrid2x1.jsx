@@ -1,9 +1,9 @@
-import { Element, useNode } from '@craftjs/core';
+import { Element } from '@craftjs/core';
 import React from 'react';
-import {Image} from '../Image';
 import { ContainerGrid } from '../ContainerGrid';
 import {ContainerGridSettings} from "../ContainerGrid/ContainerGridSettings";
-import {ImageWidhtAnimateText} from "../ImageWidhtAnimateText";
+import {ImageWidhtAnimateText} from "../Image/ImageWidhtAnimateText";
+import {ImageWidhtAnimate} from "../Image/ImageWidhtAnimate";
 
 const defaultProps = {
   paddingWidth: '0',
@@ -37,7 +37,7 @@ export const ColumnsGrid2x1 = (props) => {
         gridArea='r'
         height='100%'
         src='http://localhost:5000/hor.jpeg'
-        is={Image}
+        is={ImageWidhtAnimate}
       />
     </ContainerGrid>
   );
