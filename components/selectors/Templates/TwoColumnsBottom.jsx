@@ -2,7 +2,7 @@ import { Element, useNode } from '@craftjs/core';
 import React from 'react';
 import { ContainerGrid } from '../ContainerGrid';
 import {ContainerGridSettings} from "../ContainerGrid/ContainerGridSettings";
-import {ImageBottom} from "../ImageBottom";
+import {ImageBottom} from "../Image/ImageBottom";
 
 const defaultProps = {
   paddingWidth: '10',

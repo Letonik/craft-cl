@@ -51,37 +51,7 @@ export const Sidebar = () => {
 
   return (
     <SidebarDiv enabled={enabled} className="sidebar transition bg-white w-2">
-     {/* <div className="flex flex-col h-full">
-        <SidebarItem
-          icon={CustomizeIcon}
-          title="Компоненты"
-          height={!layersVisible ? 'full' : '55%'}
-          visible={componentsVisible}
-          onChange={(val) => setComponentsVisible(val)}
-        >
-          <MyComponents />
-        </SidebarItem>
-        <SidebarItem
-          icon={CustomizeIcon}
-          title="Стили"
-          height={!layersVisible ? 'full' : '55%'}
-          visible={toolbarVisible}
-          onChange={(val) => setToolbarVisible(val)}
-        >
-          <Toolbar />
-        </SidebarItem>
-        <SidebarItem
-          icon={LayerIcon}
-          title="Дерево"
-          height={!toolbarVisible ? 'full' : '45%'}
-          visible={layersVisible}
-          onChange={(val) => setLayerVisible(val)}
-        >
-          <div className="">
-            <Layers expandRootOnLoad={true} />
-          </div>
-        </SidebarItem>
-      </div>*/}
+
       <div className={classes.root}>
         <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
           <AccordionSummary

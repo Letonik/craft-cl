@@ -52,8 +52,9 @@ const Items = ({templates}) => {
                         <div>
                             <Fab
                                 size="small"
-                                color={item.active ? "secondary" : "gray"}
                                 onClick={() => handleOpen(item._id)}
+                                style={{background: item.active ? '#9c27b0' : 'none',
+                                        color: item.active ? '#ffffff' : '#000000',}}
                             >
                                 <CheckIcon/>
                             </Fab>
@@ -64,8 +65,8 @@ const Items = ({templates}) => {
                                 {new Date(item.createdOn).toLocaleString()}</div>
                             <div>
                                 <Fab
-                                    size="small" color='primary'
-                                    style={{marginRight: '15px'}}
+                                    size="small"
+                                    style={{background: '#1976d2', marginRight: '15px', color: '#ffffff'}}
                                     onClick={() => router.push({pathname: `/editor/${code}/${item._id}`})}
                                 >
                                     <EditIcon/>

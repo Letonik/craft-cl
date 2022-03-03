@@ -32,7 +32,7 @@ const CreateTemp = () => {
                     className='plus'
                     onClick={handleOpen}
                 >
-                    <Fab size="medium" color="secondary" aria-label="add">
+                    <Fab size="medium" color="secondary" aria-label="add" style={{background:'#9c27b0'}}>
                         <AddIcon/>
                     </Fab>
                 </div>

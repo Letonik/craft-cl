@@ -1,7 +1,7 @@
 import {useNode, useEditor, Element} from '@craftjs/core';
 import React from 'react';
 import styled from 'styled-components';
-import { ImageSettings } from '../Image/ImageSetting';
+import { ImageSettings } from './ImageSetting';
 import {ForDropBottom} from "../ForDrop/ForDropBottom";
 import {Text} from "../Text";
 

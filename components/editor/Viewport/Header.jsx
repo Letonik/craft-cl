@@ -7,7 +7,6 @@ import ArrowDropDownCircleIcon from '@mui/icons-material/ArrowDropDownCircle';
 import cx from 'classnames';
 import React, {useState} from 'react';
 import styled from 'styled-components';
-import lz from 'lzutf8';
 import Checkmark from '../../../public/icons/check.svg';
 import Customize from '../../../public/icons/customize.svg';
 import RedoSvg from '../../../public/icons/toolbox/redo.svg';
@@ -16,7 +15,6 @@ import {useDispatch, useSelector} from "react-redux";
 import {getMediaSelector} from "../../../store/selectors/selectors";
 import {changeMedia} from "../../../store/reducers/mediaReducer";
 import {useRouter} from "next/router";
-import {tempsAPI} from "../../../api/api";
 import {OneAndFourGrid} from "../../selectors/Templates/OneAndFourGrid";
 import {ThreeColumnsGrid} from "../../selectors/Templates/ThreeColumnsGrid";
 import {TwoColumnsGrid} from "../../selectors/Templates/TwoColumnsGrid";
@@ -28,10 +26,11 @@ import {FourColumnsBottom} from "../../selectors/Templates/FourColumnsBottom";
 import {TwoColumnsText} from "../../selectors/Templates/TwoColumnsText";
 import {ThreeColumnsText} from "../../selectors/Templates/ThreeColumnsText";
 import Tooltip from "@mui/material/Tooltip";
-import {ImageWidhtAnimateText} from "../../selectors/Image/ImageWidhtAnimateText";
 import {ColumnsGrid2x1} from "../../selectors/Templates/ColumnsGrid2x1";
 import {ColumnsGrid1x1x1} from "../../selectors/Templates/ColumnsGrid1x1x1";
 import {ColumnsGrid1x1x1x1} from "../../selectors/Templates/ColumnsGrid1x1x1x1";
+import {tempsAPI} from "../../../api/api";
+import lz from 'lzutf8';
 
 const HeaderDiv = styled.div`
   width: 100%;
@@ -149,9 +148,9 @@ export const Header = () => {
   }
   const saveCode = async () => {
     console.log(query.getState())
-/*    const json = query.serialize();
+    const json = query.serialize();
     const html = lz.encodeBase64(lz.compress(json));
-    await tempsAPI.saveCode(code, id, html, media)*/
+    await tempsAPI.saveCode(code, id, html, media)
   }
   const offset = [0,0,0,0,0,0,0]
 

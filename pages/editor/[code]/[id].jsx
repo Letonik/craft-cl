@@ -1,6 +1,4 @@
 import {Editor, Frame, Element, useEditor} from '@craftjs/core';
-/*import { createMuiTheme } from '@material-ui/core';
-import { ThemeProvider } from '@material-ui/styles';*/
 import React, {useEffect, useMemo} from 'react';
 
 import { Viewport, RenderNode } from '../../../components/editor';
@@ -28,7 +26,7 @@ import {ThreeColumnsGrid} from "../../../components/selectors/Templates/ThreeCol
 import {TwoColumnsGrid} from "../../../components/selectors/Templates/TwoColumnsGrid";
 import {FourColumnsGrid} from "../../../components/selectors/Templates/FourColumnsGrid";
 import {CustomGrid} from "../../../components/selectors/Templates/CustomGrid";
-import {ImageBottom} from "../../../components/selectors/ImageBottom";
+import {ImageBottom} from "../../../components/selectors/Image/ImageBottom";
 import {TwoColumnsBottom} from "../../../components/selectors/Templates/TwoColumnsBottom";
 import {ForDropBottom} from "../../../components/selectors/ForDrop/ForDropBottom";
 import {ThreeColumnsBottom} from "../../../components/selectors/Templates/ThreeColumnsBottom";
@@ -46,6 +44,8 @@ import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
 import {ColumnsGrid2x1} from "../../../components/selectors/Templates/ColumnsGrid2x1";
 import {ColumnsGrid1x1x1} from "../../../components/selectors/Templates/ColumnsGrid1x1x1";
 import {ColumnsGrid1x1x1x1} from "../../../components/selectors/Templates/ColumnsGrid1x1x1x1";
+import lz from 'lzutf8';
+
 
 const theme = createTheme({
   typography: {
@@ -67,8 +67,6 @@ function EditorPage() {
 
   const temp = useMemo(() => {
     return  locations.filter(loc => loc.code === code)[0].temps.filter(temp => temp._id === id);
-    /*const json = lz.decompress(lz.decodeBase64(stateToLoad));
-    actions.deserialize(json);*/
   }, [])
   return (
         <ThemeProvider theme={theme}>
