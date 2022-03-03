@@ -19,6 +19,7 @@ import {getLocationSelector, getMediaSelector} from "../../../store/selectors/se
 import {AppContainer} from "../../../components/selectors/AppContainer";
 import {Image} from "../../../components/selectors/Image";
 import {ImageWidhtAnimateText} from "../../../components/selectors/Image/ImageWidhtAnimateText";
+import {ImageWidhtAnimatePrice} from "../../../components/selectors/Image/ImageWidhtAnimatePrice";
 import {ImageWidhtAnimate} from "../../../components/selectors/Image/ImageWidhtAnimate";
 import {ContainerGrid} from "../../../components/selectors/ContainerGrid";
 import {OneAndFourGrid} from "../../../components/selectors/Templates/OneAndFourGrid";
@@ -42,9 +43,9 @@ import {OneSwiper} from "../../../components/selectors/Swiper/SwiperComponent";
 import {ImageSlider} from "../../../components/selectors/Image/ImageSlider";
 import {TextSlider} from "../../../components/selectors/Text/TextSlider";
 import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
-
 import {ColumnsGrid2x1} from "../../../components/selectors/Templates/ColumnsGrid2x1";
 import {ColumnsGrid1x1x1} from "../../../components/selectors/Templates/ColumnsGrid1x1x1";
+import {ColumnsGrid1x1x1x1} from "../../../components/selectors/Templates/ColumnsGrid1x1x1x1";
 
 const theme = createTheme({
   typography: {
@@ -75,42 +76,44 @@ function EditorPage() {
             <Editor
               resolver={{
                 AppContainer,
+                Button,
                 Container,
-                Text,
                 Custom1,
                 Custom2,
                 Custom2VideoDrop,
                 Custom3,
                 Custom3BtnDrop,
-                OnlyButtons,
-                Button,
-                Video,
-                Image,
                 ContainerGrid,
-                OneAndFourGrid,
+                ColumnsGrid2x1,
+                ColumnsGrid1x1x1,
+                ColumnsGrid1x1x1x1,
+                CustomGrid,
+                Image,
+                ImageWidhtAnimate,
+                ImageWidhtAnimatePrice,
+                ImageWidhtAnimateText,
+                ImageSlider,
+                ImageBottom,
                 ForDrop,
                 ForDropBottom,
+                FourColumnsBottom,
+                FourColumnsGrid,
+                FourColumnsText,
+                OnlyButtons,
+                OneImage,
+                OneSwiper,
+                OneAndFourGrid,
+                SwiperCom,
                 ThreeColumnsGrid,
                 TwoColumnsGrid,
-                FourColumnsGrid,
-                CustomGrid,
-                ImageBottom,
                 TwoColumnsBottom,
                 ThreeColumnsBottom,
-                FourColumnsBottom,
                 TextForGrid,
                 TwoColumnsText,
                 ThreeColumnsText,
-                FourColumnsText,
-                SwiperCom,
-                OneImage,
-                OneSwiper,
-                ImageSlider,
+                Text,
                 TextSlider,
-                ImageWidhtAnimateText,
-                ColumnsGrid2x1,
-                ColumnsGrid1x1x1,
-                ImageWidhtAnimate
+                Video,
               }}
               enabled={false}
               onRender={RenderNode}

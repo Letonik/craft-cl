@@ -31,6 +31,7 @@ import Tooltip from "@mui/material/Tooltip";
 import {ImageWidhtAnimateText} from "../../selectors/Image/ImageWidhtAnimateText";
 import {ColumnsGrid2x1} from "../../selectors/Templates/ColumnsGrid2x1";
 import {ColumnsGrid1x1x1} from "../../selectors/Templates/ColumnsGrid1x1x1";
+import {ColumnsGrid1x1x1x1} from "../../selectors/Templates/ColumnsGrid1x1x1x1";
 
 const HeaderDiv = styled.div`
   width: 100%;
@@ -152,7 +153,7 @@ export const Header = () => {
     const html = lz.encodeBase64(lz.compress(json));
     await tempsAPI.saveCode(code, id, html, media)*/
   }
-  const offset = [0,0,0,0,0,0]
+  const offset = [0,0,0,0,0,0,0]
 
   return (
     <HeaderDiv className="header text-white transition w-full">
@@ -270,7 +271,17 @@ export const Header = () => {
                 </div>
               </Tooltip>
             </div>
-
+            <div
+              ref={(ref) =>
+                create(ref, <ColumnsGrid1x1x1x1/>)
+              }
+            >
+              <Tooltip title="1x1x1" placement="right">
+                <div className="cursor-pointer block" move style={{width: '150px'}}>
+                  <img src="/1x1x1x1.png" alt="" style={{width: '150px'}}/>
+                </div>
+              </Tooltip>
+            </div>
             <div
               ref={(ref) =>
                 create(ref, <OneAndFourGrid/>)
