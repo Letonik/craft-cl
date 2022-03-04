@@ -31,6 +31,7 @@ import {ColumnsGrid1x1x1} from "../../selectors/Templates/ColumnsGrid1x1x1";
 import {ColumnsGrid1x1x1x1} from "../../selectors/Templates/ColumnsGrid1x1x1x1";
 import {tempsAPI} from "../../../api/api";
 import lz from 'lzutf8';
+import {HeaderGrid} from "../../selectors/Templates/HeaderGrid";
 
 const HeaderDiv = styled.div`
   width: 100%;
@@ -152,7 +153,7 @@ export const Header = () => {
     const html = lz.encodeBase64(lz.compress(json));
     await tempsAPI.saveCode(code, id, html, media)
   }
-  const offset = [0,0,0,0,0,0,0]
+  const offset = [0,0,0,0,0,0,0,0]
 
   return (
     <HeaderDiv className="header text-white transition w-full">
@@ -248,6 +249,17 @@ export const Header = () => {
               </div>
             )}
            {/*                  ////////////               */}
+            <div
+              ref={(ref) =>
+                create(ref, <HeaderGrid/>)
+              }
+            >
+              <Tooltip title="1x1x1" placement="right">
+                <div className="cursor-pointer block" move style={{width: '150px'}}>
+                  <img src="/Header.png" alt="" style={{width: '150px'}}/>
+                </div>
+              </Tooltip>
+            </div>
             <div
               ref={(ref) =>
                 create(ref, <ColumnsGrid2x1/>)

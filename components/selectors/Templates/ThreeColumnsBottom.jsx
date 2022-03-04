@@ -29,21 +29,21 @@ export const ThreeColumnsBottom = (props) => {
         canvas id="imLesft"
         gridArea='l'
         height='auto'
-        src='http://localhost:5000/ver.jpg'
+        src='http://localhost:5000/ver.png'
         is={ImageBottom}
       />
       <Element
         canvas id="im2sin4"
         gridArea='c'
         height='auto'
-        src='http://localhost:5000/ver.jpg'
+        src='http://localhost:5000/ver.png'
         is={ImageBottom}
       />
       <Element
         canvas id="im2sins4"
         gridArea='r'
         height='auto'
-        src='http://localhost:5000/ver.jpg'
+        src='http://localhost:5000/ver.png'
         is={ImageBottom}
       />
     </ContainerGrid>

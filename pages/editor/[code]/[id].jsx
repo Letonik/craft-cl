@@ -45,6 +45,9 @@ import {ColumnsGrid2x1} from "../../../components/selectors/Templates/ColumnsGri
 import {ColumnsGrid1x1x1} from "../../../components/selectors/Templates/ColumnsGrid1x1x1";
 import {ColumnsGrid1x1x1x1} from "../../../components/selectors/Templates/ColumnsGrid1x1x1x1";
 import lz from 'lzutf8';
+import {ForDropHeader} from "../../../components/selectors/ForDrop/ForDropHeader";
+import {ImageHeader} from "../../../components/selectors/Image/ImageHeader";
+import {HeaderGrid} from "../../../components/selectors/Templates/HeaderGrid";
 
 
 const theme = createTheme({
@@ -87,14 +90,17 @@ function EditorPage() {
                 ColumnsGrid1x1x1x1,
                 CustomGrid,
                 Image,
+                ImageHeader,
                 ImageWidhtAnimate,
                 ImageWidhtAnimatePrice,
                 ImageWidhtAnimateText,
                 ImageSlider,
                 ImageBottom,
+                HeaderGrid,
                 ForDrop,
                 ForDropBottom,
                 FourColumnsBottom,
+                ForDropHeader,
                 FourColumnsGrid,
                 FourColumnsText,
                 OnlyButtons,

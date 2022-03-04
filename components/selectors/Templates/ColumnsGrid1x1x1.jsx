@@ -29,21 +29,21 @@ export const ColumnsGrid1x1x1 = (props) => {
         canvas id="aaa"
         gridArea='l'
         height='100%'
-        src='http://localhost:5000/ver.jpg'
+        src='http://localhost:5000/ver.png'
         is={ImageWidhtAnimateText}
       />
       <Element
         canvas id="sss"
         gridArea='c'
         height='100%'
-        src='http://localhost:5000/ver.jpg'
+        src='http://localhost:5000/ver.png'
         is={ImageWidhtAnimateText}
       />
       <Element
         canvas id="ddd"
         gridArea='r'
         height='100%'
-        src='http://localhost:5000/ver.jpg'
+        src='http://localhost:5000/ver.png'
         is={ImageWidhtAnimateText}
       />
     </ContainerGrid>

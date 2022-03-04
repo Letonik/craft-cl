@@ -28,28 +28,28 @@ export const FourColumnsGrid = (props) => {
         canvas id="imLefqqt"
         gridArea='l'
         height='100%'
-        src='http://localhost:5000/ver.jpg'
+        src='http://localhost:5000/ver.png'
         is={Image}
       />
       <Element
         canvas id="im1qin4"
         gridArea='cl'
         height='100%'
-        src='http://localhost:5000/ver.jpg'
+        src='http://localhost:5000/ver.png'
         is={Image}
       />
       <Element
         canvas id="im2iqn4"
         gridArea='cr'
         height='100%'
-        src='http://localhost:5000/ver.jpg'
+        src='http://localhost:5000/ver.png'
         is={Image}
       />
       <Element
         canvas id="im2inq4"
         gridArea='r'
         height='100%'
-        src='http://localhost:5000/ver.jpg'
+        src='http://localhost:5000/ver.png'
         is={Image}
       />
     </ContainerGrid>

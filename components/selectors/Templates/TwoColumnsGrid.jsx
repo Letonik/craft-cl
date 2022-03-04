@@ -28,14 +28,14 @@ export const TwoColumnsGrid = (props) => {
         canvas id="imLesft"
         gridArea='l'
         height='100%'
-        src='http://localhost:5000/ver.jpg'
+        src='http://localhost:5000/ver.png'
         is={Image}
       />
       <Element
         canvas id="im2sin4"
         gridArea='r'
         height='100%'
-        src='http://localhost:5000/ver.jpg'
+        src='http://localhost:5000/ver.png'
         is={Image}
       />
     </ContainerGrid>

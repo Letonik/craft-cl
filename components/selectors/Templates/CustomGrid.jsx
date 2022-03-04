@@ -28,35 +28,35 @@ export const CustomGrid = (props) => {
         canvas id="imfqqt"
         gridArea='l'
         height='100%'
-        src='http://localhost:5000/ver.jpg'
+        src='http://localhost:5000/ver.png'
         is={Image}
       />
       <Element
         canvas id="iixxn4"
         gridArea='cu'
         height='100%'
-        src='http://localhost:5000/hor.jpeg'
+        src='http://localhost:5000/hor.png'
         is={Image}
       />
       <Element
         canvas id="iasaqn4"
         gridArea='ru'
         height='100%'
-        src='http://localhost:5000/ver.jpg'
+        src='http://localhost:5000/ver.png'
         is={Image}
       />
       <Element
         canvas id="imtt4"
         gridArea='cd'
         height='100%'
-        src='http://localhost:5000/ver.jpg'
+        src='http://localhost:5000/ver.png'
         is={Image}
       />
       <Element
         canvas id="itdq4"
         gridArea='rd'
         height='100%'
-        src='http://localhost:5000/hor.jpeg'
+        src='http://localhost:5000/hor.png'
         is={Image}
       />
     </ContainerGrid>

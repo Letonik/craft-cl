@@ -2,7 +2,7 @@ import {useNode, useEditor, Element} from '@craftjs/core';
 import React from 'react';
 import styled from 'styled-components';
 import { ImageSettings } from './ImageSetting';
-import {ForDrop} from "../ForDrop";
+import {ForDropHeader} from "../ForDrop/ForDropHeader";
 
 const ImageDiv = styled.div`
   position: relative;
@@ -22,7 +22,7 @@ const defaultProps = {
   link: ''
 };
 
-export const Image = (props) => {
+export const ImageHeader = (props) => {
   props = {
     ...defaultProps,
     ...props,
@@ -48,13 +48,13 @@ export const Image = (props) => {
         <img
           src={src}
         />
-        <Element canvas is={ForDrop} id="wow33" />
+        <Element canvas is={ForDropHeader} id="wow33" />
       </a>
     </ImageDiv>
   );
 };
 
-Image.craft = {
+ImageHeader.craft = {
   displayName: 'Image',
   props: defaultProps,
   related: {

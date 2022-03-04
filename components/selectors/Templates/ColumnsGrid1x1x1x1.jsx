@@ -28,28 +28,28 @@ export const ColumnsGrid1x1x1x1 = (props) => {
         canvas id="l"
         gridArea='l'
         height='100%'
-        src='http://localhost:5000/ver.jpg'
+        src='http://localhost:5000/ver.png'
         is={ImageWidhtAnimatePrice}
       />
       <Element
         canvas id="cl"
         gridArea='cl'
         height='100%'
-        src='http://localhost:5000/ver.jpg'
+        src='http://localhost:5000/ver.png'
         is={ImageWidhtAnimatePrice}
       />
       <Element
         canvas id="cr"
         gridArea='cr'
         height='100%'
-        src='http://localhost:5000/ver.jpg'
+        src='http://localhost:5000/ver.png'
         is={ImageWidhtAnimatePrice}
       />
       <Element
         canvas id="r"
         gridArea='r'
         height='100%'
-        src='http://localhost:5000/ver.jpg'
+        src='http://localhost:5000/ver.png'
         is={ImageWidhtAnimatePrice}
       />
     </ContainerGrid>

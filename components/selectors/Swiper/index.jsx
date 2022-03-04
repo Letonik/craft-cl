@@ -23,7 +23,7 @@ function Item({i})
     if (document.getElementById('myPaper') !== null) {
       setWidth(document.getElementById('myPaper').offsetWidth)
     }
-  }, [document.getElementById('myPaper'), height])
+  }, [document.getElementById('myPaper')])
   useEffect(() => {
     let newHeight = width * 9 / 16
     setHeight(newHeight + 'px')
@@ -36,7 +36,7 @@ function Item({i})
         canvas
         id={'a' + i}
         height={height}
-        src='http://localhost:5000/hor.jpeg'
+        src='http://localhost:5000/hor.png'
         is={Image} />
     </Paper>
   )

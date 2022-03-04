@@ -2,8 +2,8 @@ import { Element } from '@craftjs/core';
 import React from 'react';
 import { ContainerGrid } from '../ContainerGrid';
 import {ContainerGridSettings} from "../ContainerGrid/ContainerGridSettings";
-import {ImageWidhtAnimateText} from "../Image/ImageWidhtAnimateText";
-import {ImageWidhtAnimate} from "../Image/ImageWidhtAnimate";
+import {ImageWidhtAnimatePrice} from "../Image/ImageWidhtAnimatePrice";
+import {ImageHeader} from "../Image/ImageHeader";
 
 const defaultProps = {
   paddingWidth: '0',
@@ -11,41 +11,33 @@ const defaultProps = {
   gap: '2'
 };
 
-export const ColumnsGrid2x1 = (props) => {
+export const HeaderGrid = (props) => {
 
   props = {
     ...defaultProps,
     ...props,
   };
-  console.log(props)
   return (
     <ContainerGrid
       padding={[props.paddingHeight, props.paddingWidth, props.paddingHeight, props.paddingWidth]}
       gap={props.gap}
-      areasUp={"'l r r'"}
-      areasDown={"'l r r'"}
+      areasUp={"'l'"}
+      areasDown={"'l'"}
     >
       <Element
-        canvas id="imLesft"
+        canvas id="l"
         gridArea='l'
         height='100%'
-        src='http://localhost:5000/ver.png'
-        is={ImageWidhtAnimateText}
-      />
-      <Element
-        canvas id="im2sin4"
-        gridArea='r'
-        height='100%'
         src='http://localhost:5000/hor.png'
-        is={ImageWidhtAnimate}
+        is={ImageHeader}
       />
     </ContainerGrid>
   );
 };
 
-ColumnsGrid2x1.craft = {
+HeaderGrid.craft = {
   ...ContainerGrid.craft,
-  displayName: '2 Col',
+  displayName: 'Header',
   props: defaultProps,
   related: {
     toolbar: ContainerGridSettings,

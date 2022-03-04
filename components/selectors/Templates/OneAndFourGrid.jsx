@@ -29,21 +29,21 @@ export const OneAndFourGrid = (props) => {
           canvas id="imLeft"
           gridArea='l'
           height='100%'
-          src='http://localhost:5000/ver.jpg'
+          src='http://localhost:5000/ver.png'
           is={Image}
         />
         <Element
           canvas id="im1in4"
           gridArea='lu'
           height='100%'
-          src='http://localhost:5000/ver.jpg'
+          src='http://localhost:5000/ver.png'
           is={Image}
         />
         <Element
           canvas id="im2in4"
           gridArea='ru'
           height='100%'
-          src='http://localhost:5000/ver.jpg'
+          src='http://localhost:5000/ver.png'
           is={Image}
         />
         <Element
@@ -51,13 +51,13 @@ export const OneAndFourGrid = (props) => {
           is={Image}
           height='100%'
           gridArea='ld'
-          src='http://localhost:5000/ver.jpg'
+          src='http://localhost:5000/ver.png'
         />
         <Element
           canvas id="im4in4"
           gridArea='rd'
           height='100%'
-          src='http://localhost:5000/ver.jpg'
+          src='http://localhost:5000/ver.png'
           is={Image}
         />
     </ContainerGrid>

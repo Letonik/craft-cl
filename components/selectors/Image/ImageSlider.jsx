@@ -32,7 +32,7 @@ const ImageDiv = styled.div`
 
 const defaultProps = {
   gridArea: '',
-  src: 'http://localhost:5000/ver.jpg',
+  src: 'http://localhost:5000/ver.png',
   link: '',
   colorText: { r: 0, g: 0, b: 0, a: 1 },
   buttonStyle: 'outline',

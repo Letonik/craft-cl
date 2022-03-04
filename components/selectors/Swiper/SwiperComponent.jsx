@@ -30,7 +30,7 @@ export const OneSwiper = (props) => {
         canvas id="imLesft"
         gridArea='l'
         height='100%'
-        src='https://i.pinimg.com/originals/aa/d8/ab/aad8abfb3729fa1982cf9e2731efe197.jpg'
+        src='http://localhost:5000/hor.png'
         is={SwiperCom}
       />
     </ContainerGrid>
